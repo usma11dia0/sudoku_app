@@ -1,0 +1,18 @@
+# 本番用のDockerfile
+FROM python:3.9-slim-buster
+
+# 作業ディレクトリの設定
+WORKDIR /app
+
+# 依存関係のインストール
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# アプリケーションのコードをコピー
+COPY . .
+
+# 本番環境用のポートを開放
+EXPOSE 8080
+
+# 本番環境用のサーバーを起動
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:8080", "main:app"]
