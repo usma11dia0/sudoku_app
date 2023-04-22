@@ -1,7 +1,7 @@
-# ベースイメージを選択
+# 開発用のDockerfile
 FROM python:3.11-slim
 
-# 作業ディレクトリを設定
+# 作業ディレクトリの設定
 WORKDIR /app
 
 # 依存関係をインストール
