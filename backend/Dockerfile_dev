@@ -8,11 +8,8 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# アプリケーションのソースコードをコピー
-# COPY . .
-
 # 開発サーバー用のポートを解放
 EXPOSE 8000
 
 # 開発サーバーを起動
-CMD ["hupper", "-m", "main"]
+CMD ["python", "server.py"]

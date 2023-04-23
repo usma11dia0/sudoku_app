@@ -1,14 +1,19 @@
 version: '3'
 
 services:
-# frontend:
-#    build: ./frontend
-#    ports:
-#      - "3000:3000"
-#    volumes:
-#      - ./frontend/:app
-#    depends_on:
-#      - backend
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile_dev
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - backend
+    container_name: frontend_dev
+    networks:
+      - app-network
 
   backend:
     build: 
@@ -19,3 +24,9 @@ services:
     volumes:
       - ./backend:/app
     container_name: backend_dev
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

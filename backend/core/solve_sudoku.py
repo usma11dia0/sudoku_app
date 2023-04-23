@@ -1,3 +1,5 @@
+import numpy as np
+
 # 　Input data of sudoku
 input_grid = [
     [0, 1, 8, 0, 0, 0, 3, 2, 0],
@@ -67,6 +69,6 @@ def solve_sudoku(grid: list, i: int = 0, j: int = 0) -> bool:
 if solve_sudoku(input_grid):
     print("Sudoku solved successfully")
 
-# Print the solved sudoku
+# Print and reshape the grid to 9x9
 export_grid = "\n".join([" ".join([str(num) for num in row]) for row in input_grid])
 print(export_grid)
