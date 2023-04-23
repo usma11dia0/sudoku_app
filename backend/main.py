@@ -1,4 +1,6 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
+from core.solve_sudoku import input_grid, solve_sudoku
+
 
 class SudokuHandler(BaseHTTPRequestHandler):
     def _send_response(self, content):
@@ -9,7 +11,10 @@ class SudokuHandler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         if self.path == "/":
-            self._send_response("Hello, Sudoku Solver!")
+            # self._send_response(open("index.html").read())
+            # answer = solve_sudoku(input_grid)
+            # self._send_response(print(answer))
+            self._send_response('helloworld sudoku')
 
 if __name__ == "__main__":
     server_address = ("", 8000)

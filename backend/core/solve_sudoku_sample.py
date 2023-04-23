@@ -66,7 +66,3 @@ def solve_sudoku(grid: list, i: int = 0, j: int = 0) -> bool:
 
 if solve_sudoku(input_grid):
     print("Sudoku solved successfully")
-
-# Print the solved sudoku
-export_grid = "\n".join([" ".join([str(num) for num in row]) for row in input_grid])
-print(export_grid)
