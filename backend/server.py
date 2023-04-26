@@ -15,10 +15,9 @@ class SudokuHandler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         if self.path == "/":
-            # self._send_response(open("index.html").read())
             solve_sudoku(input_grid)
-            self._send_response(export_grid)
-            # self._send_response('helloworld sudoku')
+            # self._send_response(export_grid)
+            self._send_response("Hello World")
 
 if __name__ == "__main__":
     server_address = ("", 8000)

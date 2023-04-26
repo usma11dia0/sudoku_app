@@ -1,5 +1,3 @@
-import numpy as np
-
 # 　Input data of sudoku
 input_grid = [
     [0, 1, 8, 0, 0, 0, 3, 2, 0],
