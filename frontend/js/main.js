@@ -7,7 +7,7 @@ document.getElementById("sudoku-button").addEventListener("click", async() =>{
   // // 解答を盤面に表示
   // for (let i = 0; i < 9; i++){
   //   for (let j = 0; j < 9; j++){
-  //     document.getElementById(`cell-${i}-${j}`).value = answer[i][j];
+  //     document.getElementById(`sudoku-cell-${i}-${j}`).value = answer[i][j];
   //   }
   // }
 })
