@@ -68,5 +68,5 @@ if solve_sudoku(input_grid):
     print("Sudoku solved successfully")
 
 # Print and reshape the grid to 9x9
-export_grid = "\n".join([" ".join([str(num) for num in row]) for row in input_grid])
-print(export_grid)
+# export_grid = "\n".join([" ".join([str(num) for num in row]) for row in input_grid])
+export_grid = input_grid
