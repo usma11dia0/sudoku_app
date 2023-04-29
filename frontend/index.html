@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>数独カンニング用</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -9,7 +10,12 @@
   <h1>数独カンニング用サイト</h1>
 </header>
 <body>
-  <button id="input-button">問題入力</button>
+  <div class="flex-container">
+    <div class="button-container">
+      <button id="input-button">問題入力</button>
+      <button id="delete-button">消去</button>
+    </div>
+  </div>
   <table id="sudoku-board" class="input">
     <!-- 数独の盤面をここに表示 -->
     <tr>
@@ -112,7 +118,12 @@
       <td id="sudoku-input-cell-8-8" contenteditable="true"></td>
     </tr>
   <table>
-  <button id="output-button">解答表示</button>
+  <div class="flex-container">
+    <div class="button-container">
+      <button id="output-button">解答表示</button>
+      <button id="delete-button">消去</button>
+    </div>
+  </div>
   <table id="sudoku-board" class="output">
     <!-- 数独の盤面をここに表示 -->
     <tr>
