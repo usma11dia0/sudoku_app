@@ -5,71 +5,216 @@
     <title>数独カンニング用</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<header>
   <h1>数独カンニング用サイト</h1>
-  <p id="test"></p>
-  <table id="sudoku-board">
+</header>
+<body>
+  <button id="input-button">問題入力</button>
+  <table id="sudoku-board" class="input">
     <!-- 数独の盤面をここに表示 -->
-    <td>
-      <table>
-        <tr>
-          <td id="sudoku-cell-0-0"></td>
-          <td id="sudoku-cell-0-1"></td>
-          <td id="sudoku-cell-0-2"></td>
-          <td id="sudoku-cell-0-3"></td>
-          <td id="sudoku-cell-0-4"></td>
-          <td id="sudoku-cell-0-5"></td>
-          <td id="sudoku-cell-0-6"></td>
-          <td id="sudoku-cell-0-7"></td>
-          <td id="sudoku-cell-0-8"></td>
-        </tr>
-        <tr>
-          <td id="sudoku-cell-1-0"></td>
-          <td id="sudoku-cell-1-1"></td>
-          <td id="sudoku-cell-1-2"></td>
-          <td id="sudoku-cell-1-3"></td>
-          <td id="sudoku-cell-1-4"></td>
-          <td id="sudoku-cell-1-5"></td>
-          <td id="sudoku-cell-1-6"></td>
-          <td id="sudoku-cell-1-7"></td>
-          <td id="sudoku-cell-1-8"></td>
-        </tr>
-        <tr>
-          <td id="sudoku-cell-2-0"></td>
-          <td id="sudoku-cell-2-1"></td>
-          <td id="sudoku-cell-2-2"></td>
-          <td id="sudoku-cell-2-3"></td>
-          <td id="sudoku-cell-2-4"></td>
-          <td id="sudoku-cell-2-5"></td>
-          <td id="sudoku-cell-2-6"></td>
-          <td id="sudoku-cell-2-7"></td>
-          <td id="sudoku-cell-2-8"></td>
-        </tr>
-        <tr>
-          <td id="sudoku-cell-3-0"></td>
-          <td id="sudoku-cell-3-1"></td>
-          <td id="sudoku-cell-3-2"></td>
-          <td id="sudoku-cell-3-3"></td>
-          <td id="sudoku-cell-3-4"></td>
-          <td id="sudoku-cell-3-5"></td>
-          <td id="sudoku-cell-3-6"></td>
-          <td id="sudoku-cell-3-7"></td>
-          <td id="sudoku-cell-3-8"></td>
-        </tr>
-        <tr>
-          <td id="sudoku-cell-4-0"></td>
-          <td id="sudoku-cell-4-1"></td>
-          <td id="sudoku-cell-4-2"></td>
-          <td id="sudoku-cell-4-3"></td>
-          <td id="sudoku-cell-4-4"></td>
-          <td id="sudoku-cell-4-5"></td>
-          <td id="sudoku-cell-4-6"></td>
-          <td id="sudoku-cell-4-7"></td>
-          <td id="sudoku-cell-4-8"></td>
-        </tr>
-    </td>
+    <tr>
+      <td id="sudoku-input-cell-0-0"></td>
+      <td id="sudoku-input-cell-0-1"></td>
+      <td id="sudoku-input-cell-0-2"></td>
+      <td id="sudoku-input-cell-0-3"></td>
+      <td id="sudoku-input-cell-0-4"></td>
+      <td id="sudoku-input-cell-0-5"></td>
+      <td id="sudoku-input-cell-0-6"></td>
+      <td id="sudoku-input-cell-0-7"></td>
+      <td id="sudoku-input-cell-0-8"></td>
+    </tr>
+    <tr>
+      <td id="sudoku-input-cell-1-0"></td>
+      <td id="sudoku-input-cell-1-1"></td>
+      <td id="sudoku-input-cell-1-2"></td>
+      <td id="sudoku-input-cell-1-3"></td>
+      <td id="sudoku-input-cell-1-4"></td>
+      <td id="sudoku-input-cell-1-5"></td>
+      <td id="sudoku-input-cell-1-6"></td>
+      <td id="sudoku-input-cell-1-7"></td>
+      <td id="sudoku-input-cell-1-8"></td>
+    </tr>
+    <tr>
+      <td id="sudoku-input-cell-2-0"></td>
+      <td id="sudoku-input-cell-2-1"></td>
+      <td id="sudoku-input-cell-2-2"></td>
+      <td id="sudoku-input-cell-2-3"></td>
+      <td id="sudoku-input-cell-2-4"></td>
+      <td id="sudoku-input-cell-2-5"></td>
+      <td id="sudoku-input-cell-2-6"></td>
+      <td id="sudoku-input-cell-2-7"></td>
+      <td id="sudoku-input-cell-2-8"></td>
+    </tr>
+    <tr>
+      <td id="sudoku-input-cell-3-0"></td>
+      <td id="sudoku-input-cell-3-1"></td>
+      <td id="sudoku-input-cell-3-2"></td>
+      <td id="sudoku-input-cell-3-3"></td>
+      <td id="sudoku-input-cell-3-4"></td>
+      <td id="sudoku-input-cell-3-5"></td>
+      <td id="sudoku-input-cell-3-6"></td>
+      <td id="sudoku-input-cell-3-7"></td>
+      <td id="sudoku-input-cell-3-8"></td>
+    </tr>
+    <tr>
+      <td id="sudoku-input-cell-4-0"></td>
+      <td id="sudoku-input-cell-4-1"></td>
+      <td id="sudoku-input-cell-4-2"></td>
+      <td id="sudoku-input-cell-4-3"></td>
+      <td id="sudoku-input-cell-4-4"></td>
+      <td id="sudoku-input-cell-4-5"></td>
+      <td id="sudoku-input-cell-4-6"></td>
+      <td id="sudoku-input-cell-4-7"></td>
+      <td id="sudoku-input-cell-4-8"></td>
+    </tr>
+    <tr>
+      <td id="sudoku-input-cell-5-0"></td>
+      <td id="sudoku-input-cell-5-1"></td>
+      <td id="sudoku-input-cell-5-2"></td>
+      <td id="sudoku-input-cell-5-3"></td>
+      <td id="sudoku-input-cell-5-4"></td>
+      <td id="sudoku-input-cell-5-5"></td>
+      <td id="sudoku-input-cell-5-6"></td>
+      <td id="sudoku-input-cell-5-7"></td>
+      <td id="sudoku-input-cell-5-8"></td>
+    </tr>
+    <tr>
+      <td id="sudoku-input-cell-6-0"></td>
+      <td id="sudoku-input-cell-6-1"></td>
+      <td id="sudoku-input-cell-6-2"></td>
+      <td id="sudoku-input-cell-6-3"></td>
+      <td id="sudoku-input-cell-6-4"></td>
+      <td id="sudoku-input-cell-6-5"></td>
+      <td id="sudoku-input-cell-6-6"></td>
+      <td id="sudoku-input-cell-6-7"></td>
+      <td id="sudoku-input-cell-6-8"></td>
+    </tr>
+    <tr>
+      <td id="sudoku-input-cell-7-0"></td>
+      <td id="sudoku-input-cell-7-1"></td>
+      <td id="sudoku-input-cell-7-2"></td>
+      <td id="sudoku-input-cell-7-3"></td>
+      <td id="sudoku-input-cell-7-4"></td>
+      <td id="sudoku-input-cell-7-5"></td>
+      <td id="sudoku-input-cell-7-6"></td>
+      <td id="sudoku-input-cell-7-7"></td>
+      <td id="sudoku-input-cell-7-8"></td>
+    </tr>
+    <tr>
+      <td id="sudoku-input-cell-8-0"></td>
+      <td id="sudoku-input-cell-8-1"></td>
+      <td id="sudoku-input-cell-8-2"></td>
+      <td id="sudoku-input-cell-8-3"></td>
+      <td id="sudoku-input-cell-8-4"></td>
+      <td id="sudoku-input-cell-8-5"></td>
+      <td id="sudoku-input-cell-8-6"></td>
+      <td id="sudoku-input-cell-8-7"></td>
+      <td id="sudoku-input-cell-8-8"></td>
+    </tr>
   <table>
-  <button id="sudoku-button">数独をカンニングする</button>
+  <button id="output-button">解答表示</button>
+  <table id="sudoku-board" class="output">
+    <!-- 数独の盤面をここに表示 -->
+    <tr>
+      <td id="sudoku-output-cell-0-0"></td>
+      <td id="sudoku-output-cell-0-1"></td>
+      <td id="sudoku-output-cell-0-2"></td>
+      <td id="sudoku-output-cell-0-3"></td>
+      <td id="sudoku-output-cell-0-4"></td>
+      <td id="sudoku-output-cell-0-5"></td>
+      <td id="sudoku-output-cell-0-6"></td>
+      <td id="sudoku-output-cell-0-7"></td>
+      <td id="sudoku-output-cell-0-8"></td>
+    </tr>
+    <tr>
+      <td id="sudoku-output-cell-1-0"></td>
+      <td id="sudoku-output-cell-1-1"></td>
+      <td id="sudoku-output-cell-1-2"></td>
+      <td id="sudoku-output-cell-1-3"></td>
+      <td id="sudoku-output-cell-1-4"></td>
+      <td id="sudoku-output-cell-1-5"></td>
+      <td id="sudoku-output-cell-1-6"></td>
+      <td id="sudoku-output-cell-1-7"></td>
+      <td id="sudoku-output-cell-1-8"></td>
+    </tr>
+    <tr>
+      <td id="sudoku-output-cell-2-0"></td>
+      <td id="sudoku-output-cell-2-1"></td>
+      <td id="sudoku-output-cell-2-2"></td>
+      <td id="sudoku-output-cell-2-3"></td>
+      <td id="sudoku-output-cell-2-4"></td>
+      <td id="sudoku-output-cell-2-5"></td>
+      <td id="sudoku-output-cell-2-6"></td>
+      <td id="sudoku-output-cell-2-7"></td>
+      <td id="sudoku-output-cell-2-8"></td>
+    </tr>
+    <tr>
+      <td id="sudoku-output-cell-3-0"></td>
+      <td id="sudoku-output-cell-3-1"></td>
+      <td id="sudoku-output-cell-3-2"></td>
+      <td id="sudoku-output-cell-3-3"></td>
+      <td id="sudoku-output-cell-3-4"></td>
+      <td id="sudoku-output-cell-3-5"></td>
+      <td id="sudoku-output-cell-3-6"></td>
+      <td id="sudoku-output-cell-3-7"></td>
+      <td id="sudoku-output-cell-3-8"></td>
+    </tr>
+    <tr>
+      <td id="sudoku-output-cell-4-0"></td>
+      <td id="sudoku-output-cell-4-1"></td>
+      <td id="sudoku-output-cell-4-2"></td>
+      <td id="sudoku-output-cell-4-3"></td>
+      <td id="sudoku-output-cell-4-4"></td>
+      <td id="sudoku-output-cell-4-5"></td>
+      <td id="sudoku-output-cell-4-6"></td>
+      <td id="sudoku-output-cell-4-7"></td>
+      <td id="sudoku-output-cell-4-8"></td>
+    </tr>
+    <tr>
+      <td id="sudoku-output-cell-5-0"></td>
+      <td id="sudoku-output-cell-5-1"></td>
+      <td id="sudoku-output-cell-5-2"></td>
+      <td id="sudoku-output-cell-5-3"></td>
+      <td id="sudoku-output-cell-5-4"></td>
+      <td id="sudoku-output-cell-5-5"></td>
+      <td id="sudoku-output-cell-5-6"></td>
+      <td id="sudoku-output-cell-5-7"></td>
+      <td id="sudoku-output-cell-5-8"></td>
+    </tr>
+    <tr>
+      <td id="sudoku-output-cell-6-0"></td>
+      <td id="sudoku-output-cell-6-1"></td>
+      <td id="sudoku-output-cell-6-2"></td>
+      <td id="sudoku-output-cell-6-3"></td>
+      <td id="sudoku-output-cell-6-4"></td>
+      <td id="sudoku-output-cell-6-5"></td>
+      <td id="sudoku-output-cell-6-6"></td>
+      <td id="sudoku-output-cell-6-7"></td>
+      <td id="sudoku-output-cell-6-8"></td>
+    </tr>
+    <tr>
+      <td id="sudoku-output-cell-7-0"></td>
+      <td id="sudoku-output-cell-7-1"></td>
+      <td id="sudoku-output-cell-7-2"></td>
+      <td id="sudoku-output-cell-7-3"></td>
+      <td id="sudoku-output-cell-7-4"></td>
+      <td id="sudoku-output-cell-7-5"></td>
+      <td id="sudoku-output-cell-7-6"></td>
+      <td id="sudoku-output-cell-7-7"></td>
+      <td id="sudoku-output-cell-7-8"></td>
+    </tr>
+    <tr>
+      <td id="sudoku-output-cell-8-0"></td>
+      <td id="sudoku-output-cell-8-1"></td>
+      <td id="sudoku-output-cell-8-2"></td>
+      <td id="sudoku-output-cell-8-3"></td>
+      <td id="sudoku-output-cell-8-4"></td>
+      <td id="sudoku-output-cell-8-5"></td>
+      <td id="sudoku-output-cell-8-6"></td>
+      <td id="sudoku-output-cell-8-7"></td>
+      <td id="sudoku-output-cell-8-8"></td>
+    </tr>
+  <table>
   <script src="js/main.js"></script>
 </body>
 </html>
