@@ -16,11 +16,10 @@
       <div class="flex-container">
         <div class="button-container">
           <button id="input-button">問題入力</button>
-          <button id="delete-button">消去</button>
+          <button id="delete-input-button">消去</button>
         </div>
       </div>
       <table id="sudoku-board" class="input">
-        <!-- 数独の盤面をここに表示 -->
         <tr>
           <td id="sudoku-input-cell-0-0" contenteditable="true"></td>
           <td id="sudoku-input-cell-0-1" contenteditable="true"></td>
@@ -120,17 +119,16 @@
           <td id="sudoku-input-cell-8-7" contenteditable="true"></td>
           <td id="sudoku-input-cell-8-8" contenteditable="true"></td>
         </tr>
-      <table>
+      </table>
     </div>
     <div class="output-wrapper">
       <div class="flex-container">
         <div class="button-container">
           <button id="output-button">解答表示</button>
-          <button id="delete-button">消去</button>
+          <button id="delete-output-button">消去</button>
         </div>
       </div>
       <table id="sudoku-board" class="output">
-        <!-- 数独の盤面をここに表示 -->
         <tr>
           <td id="sudoku-output-cell-0-0"></td>
           <td id="sudoku-output-cell-0-1"></td>
@@ -230,7 +228,7 @@
           <td id="sudoku-output-cell-8-7"></td>
           <td id="sudoku-output-cell-8-8"></td>
         </tr>
-      <table>
+      </table>
     </div>
   </div>
   <script src="js/main.js"></script>

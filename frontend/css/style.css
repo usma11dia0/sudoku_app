@@ -7,7 +7,7 @@ header {
   color: #fff;
   padding: 10px 0;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   font-family: 'Myfont', sans-serif; }
 
 body {
@@ -26,10 +26,12 @@ h1 {
   @media (min-width: 1280px) {
     .wrapper {
       flex-direction: row;
-      justify-content: space-around; } }
+      justify-content: space-evenly;
+      align-items: center; } }
 
 .input-wrapper, .output-wrapper {
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 20px; }
   @media (min-width: 1280px) {
     .input-wrapper, .output-wrapper {
       width: auto; } }
@@ -44,7 +46,7 @@ h1 {
   align-items: center;
   margin-bottom: 20px; }
 
-#input-button, #output-button, #delete-button {
+#input-button, #output-button, #delete-input-button, #delete-output-button {
   display: block;
   margin: 0 50px;
   padding: 10px 20px;
@@ -56,7 +58,7 @@ h1 {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   font-family: 'Myfont', sans-serif; }
-  #input-button:hover, #output-button:hover, #delete-button:hover {
+  #input-button:hover, #output-button:hover, #delete-input-button:hover, #delete-output-button:hover {
     background-color: #333;
     color: #fff; }
 
