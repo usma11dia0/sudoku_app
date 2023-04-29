@@ -153,11 +153,15 @@ document.getElementById("output-button").addEventListener("click", async() =>{
   const answer = await response.json();
 
   // 解答を盤面に表示
-  for (let i = 0; i < numRows; i++){
-    for (let j = 0; j < numCols; j++){
-      const cell = document.getElementById(`sudoku-output-cell-${i}-${j}`);
-      cell.textContent = answer[i][j];
+  if (answer) {
+    for (let i = 0; i < numRows; i++){
+      for (let j = 0; j < numCols; j++){
+        const cell = document.getElementById(`sudoku-output-cell-${i}-${j}`);
+        cell.textContent = answer[i][j];
+      }
     }
+  } else {
+    alert("解答が見つかりませんでした");
   }
 })
 

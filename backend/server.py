@@ -30,8 +30,8 @@ class SudokuHandler(BaseHTTPRequestHandler):
             request_body_json = self.rfile.read(content_len)
             request_body_list = json.loads(request_body_json)
             # 引数のlistを参照渡しで渡す
-            solve_sudoku(request_body_list)
-            response_body_json = json.dumps(request_body_list)
+            is_solved = solve_sudoku(request_body_list)
+            response_body_json = json.dumps(request_body_list) if is_solved else json.dumps(False)
             self._send_response(response_body_json)
 
     # 確認用
