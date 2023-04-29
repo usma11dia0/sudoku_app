@@ -1,3 +1,5 @@
+import pdb
+
 # 　Input data of sudoku
 input_grid = [
     [0, 1, 8, 0, 0, 0, 3, 2, 0],
@@ -11,7 +13,6 @@ input_grid = [
     [0, 7, 0, 0, 0, 0, 0, 9, 0],
 ]
 
-
 def find_next_cell(grid: list) -> tuple[int, int]:
     for i in range(9):
         for j in range(9):
@@ -19,14 +20,6 @@ def find_next_cell(grid: list) -> tuple[int, int]:
                 return i, j
     # No empty cell found
     return -1, -1
-
-
-i, j = find_next_cell(input_grid)
-if i == -1 and j == -1:
-    print("No empty cell found")
-else:
-    print("Next empty cell found at", i, j)
-
 
 def is_valid(grid: list, row: int, col: int, num: int) -> bool:
     # Check if the number is already present in the row
@@ -46,7 +39,6 @@ def is_valid(grid: list, row: int, col: int, num: int) -> bool:
     # If all the above checks are passed, the number is valid
     return True
 
-
 def solve_sudoku(grid: list, i: int = 0, j: int = 0) -> bool:
     i, j = find_next_cell(grid)
     # If there is no empty cell, the sudoku is solved
@@ -62,11 +54,3 @@ def solve_sudoku(grid: list, i: int = 0, j: int = 0) -> bool:
             # If the number is not valid, backtrack and try another number
             grid[i][j] = 0
     return False
-
-
-if solve_sudoku(input_grid):
-    print("Sudoku solved successfully")
-
-# Print and reshape the grid to 9x9
-# export_grid = "\n".join([" ".join([str(num) for num in row]) for row in input_grid])
-export_grid = input_grid

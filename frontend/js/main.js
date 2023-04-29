@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 })
 
-// 入力盤面 (csvファイルを読み込んで盤面に表示)
+// 入力ボタン (csvファイルを読み込んで盤面に表示)
 document.getElementById("input-button").addEventListener("click", async() =>{
   const input = document.createElement('input');
   input.type = 'file';
@@ -125,10 +125,33 @@ document.getElementById("input-button").addEventListener("click", async() =>{
   input.click();
 })
 
-// 出力盤面
+// 出力ボタン (入力盤面の値を送信して解答を取得)
 document.getElementById("output-button").addEventListener("click", async() =>{
-  const response = await fetch("http://localhost:8000");
+  // 入力盤面の値を取得
+  const inputValues = [];
+  for (let i = 0; i < numRows; i++){
+    const row = [];
+    for (let j = 0; j < numCols; j++){
+      const inputCell = document.getElementById(`sudoku-input-cell-${i}-${j}`);
+      const cellValue = inputCell.textContent;
+      // 空文字の場合に0を代入
+      row.push(cellValue === "" ? 0 : parseInt(cellValue, 10));
+    }
+    inputValues.push(row);
+  }
+  
+  // 入力盤面の値を送信
+  const response = await fetch("http://localhost:8000", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(inputValues),
+  });
+
+  // 解答を取得
   const answer = await response.json();
+
   // 解答を盤面に表示
   for (let i = 0; i < numRows; i++){
     for (let j = 0; j < numCols; j++){
