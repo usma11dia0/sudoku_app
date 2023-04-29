@@ -1,6 +1,6 @@
 const numRows = 9;
 const numCols = 9;
-
+  
 // マウスオーバー時に行と列をハイライト
 function highlightCross(row, col, isHighlighted, target){
   for (let i = 0; i < numRows; i++){
@@ -35,7 +35,6 @@ function handleInput(event){
     cell.setAttribute('data-old-value', newValue);
   }
 }
-
 
 function handleKeyDown(event){
   let cell =event.target

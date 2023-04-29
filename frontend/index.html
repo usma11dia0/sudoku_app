@@ -11,222 +11,228 @@
   <h1>数独カンニング用サイト</h1>
 </header>
 <body>
-  <div class="flex-container">
-    <div class="button-container">
-      <button id="input-button">問題入力</button>
-      <button id="delete-button">消去</button>
+  <div class = "wrapper">
+    <div class="input-wrapper">
+      <div class="flex-container">
+        <div class="button-container">
+          <button id="input-button">問題入力</button>
+          <button id="delete-button">消去</button>
+        </div>
+      </div>
+      <table id="sudoku-board" class="input">
+        <!-- 数独の盤面をここに表示 -->
+        <tr>
+          <td id="sudoku-input-cell-0-0" contenteditable="true"></td>
+          <td id="sudoku-input-cell-0-1" contenteditable="true"></td>
+          <td id="sudoku-input-cell-0-2" contenteditable="true"></td>
+          <td id="sudoku-input-cell-0-3" contenteditable="true"></td>
+          <td id="sudoku-input-cell-0-4" contenteditable="true"></td>
+          <td id="sudoku-input-cell-0-5" contenteditable="true"></td>
+          <td id="sudoku-input-cell-0-6" contenteditable="true"></td>
+          <td id="sudoku-input-cell-0-7" contenteditable="true"></td>
+          <td id="sudoku-input-cell-0-8" contenteditable="true"></td>
+        </tr>
+        <tr>
+          <td id="sudoku-input-cell-1-0" contenteditable="true"></td>
+          <td id="sudoku-input-cell-1-1" contenteditable="true"></td>
+          <td id="sudoku-input-cell-1-2" contenteditable="true"></td>
+          <td id="sudoku-input-cell-1-3" contenteditable="true"></td>
+          <td id="sudoku-input-cell-1-4" contenteditable="true"></td>
+          <td id="sudoku-input-cell-1-5" contenteditable="true"></td>
+          <td id="sudoku-input-cell-1-6" contenteditable="true"></td>
+          <td id="sudoku-input-cell-1-7" contenteditable="true"></td>
+          <td id="sudoku-input-cell-1-8" contenteditable="true"></td>
+        </tr>
+        <tr>
+          <td id="sudoku-input-cell-2-0" contenteditable="true"></td>
+          <td id="sudoku-input-cell-2-1" contenteditable="true"></td>
+          <td id="sudoku-input-cell-2-2" contenteditable="true"></td>
+          <td id="sudoku-input-cell-2-3" contenteditable="true"></td>
+          <td id="sudoku-input-cell-2-4" contenteditable="true"></td>
+          <td id="sudoku-input-cell-2-5" contenteditable="true"></td>
+          <td id="sudoku-input-cell-2-6" contenteditable="true"></td>
+          <td id="sudoku-input-cell-2-7" contenteditable="true"></td>
+          <td id="sudoku-input-cell-2-8" contenteditable="true"></td>
+        </tr>
+        <tr>
+          <td id="sudoku-input-cell-3-0" contenteditable="true"></td>
+          <td id="sudoku-input-cell-3-1" contenteditable="true"></td>
+          <td id="sudoku-input-cell-3-2" contenteditable="true"></td>
+          <td id="sudoku-input-cell-3-3" contenteditable="true"></td>
+          <td id="sudoku-input-cell-3-4" contenteditable="true"></td>
+          <td id="sudoku-input-cell-3-5" contenteditable="true"></td>
+          <td id="sudoku-input-cell-3-6" contenteditable="true"></td>
+          <td id="sudoku-input-cell-3-7" contenteditable="true"></td>
+          <td id="sudoku-input-cell-3-8" contenteditable="true"></td>
+        </tr>
+        <tr>
+          <td id="sudoku-input-cell-4-0" contenteditable="true"></td>
+          <td id="sudoku-input-cell-4-1" contenteditable="true"></td>
+          <td id="sudoku-input-cell-4-2" contenteditable="true"></td>
+          <td id="sudoku-input-cell-4-3" contenteditable="true"></td>
+          <td id="sudoku-input-cell-4-4" contenteditable="true"></td>
+          <td id="sudoku-input-cell-4-5" contenteditable="true"></td>
+          <td id="sudoku-input-cell-4-6" contenteditable="true"></td>
+          <td id="sudoku-input-cell-4-7" contenteditable="true"></td>
+          <td id="sudoku-input-cell-4-8" contenteditable="true"></td>
+        </tr>
+        <tr>
+          <td id="sudoku-input-cell-5-0" contenteditable="true"></td>
+          <td id="sudoku-input-cell-5-1" contenteditable="true"></td>
+          <td id="sudoku-input-cell-5-2" contenteditable="true"></td>
+          <td id="sudoku-input-cell-5-3" contenteditable="true"></td>
+          <td id="sudoku-input-cell-5-4" contenteditable="true"></td>
+          <td id="sudoku-input-cell-5-5" contenteditable="true"></td>
+          <td id="sudoku-input-cell-5-6" contenteditable="true"></td>
+          <td id="sudoku-input-cell-5-7" contenteditable="true"></td>
+          <td id="sudoku-input-cell-5-8" contenteditable="true"></td>
+        </tr>
+        <tr>
+          <td id="sudoku-input-cell-6-0" contenteditable="true"></td>
+          <td id="sudoku-input-cell-6-1" contenteditable="true"></td>
+          <td id="sudoku-input-cell-6-2" contenteditable="true"></td>
+          <td id="sudoku-input-cell-6-3" contenteditable="true"></td>
+          <td id="sudoku-input-cell-6-4" contenteditable="true"></td>
+          <td id="sudoku-input-cell-6-5" contenteditable="true"></td>
+          <td id="sudoku-input-cell-6-6" contenteditable="true"></td>
+          <td id="sudoku-input-cell-6-7" contenteditable="true"></td>
+          <td id="sudoku-input-cell-6-8" contenteditable="true"></td>
+        </tr>
+        <tr>
+          <td id="sudoku-input-cell-7-0" contenteditable="true"></td>
+          <td id="sudoku-input-cell-7-1" contenteditable="true"></td>
+          <td id="sudoku-input-cell-7-2" contenteditable="true"></td>
+          <td id="sudoku-input-cell-7-3" contenteditable="true"></td>
+          <td id="sudoku-input-cell-7-4" contenteditable="true"></td>
+          <td id="sudoku-input-cell-7-5" contenteditable="true"></td>
+          <td id="sudoku-input-cell-7-6" contenteditable="true"></td>
+          <td id="sudoku-input-cell-7-7" contenteditable="true"></td>
+          <td id="sudoku-input-cell-7-8" contenteditable="true"></td>
+        </tr>
+        <tr>
+          <td id="sudoku-input-cell-8-0" contenteditable="true"></td>
+          <td id="sudoku-input-cell-8-1" contenteditable="true"></td>
+          <td id="sudoku-input-cell-8-2" contenteditable="true"></td>
+          <td id="sudoku-input-cell-8-3" contenteditable="true"></td>
+          <td id="sudoku-input-cell-8-4" contenteditable="true"></td>
+          <td id="sudoku-input-cell-8-5" contenteditable="true"></td>
+          <td id="sudoku-input-cell-8-6" contenteditable="true"></td>
+          <td id="sudoku-input-cell-8-7" contenteditable="true"></td>
+          <td id="sudoku-input-cell-8-8" contenteditable="true"></td>
+        </tr>
+      <table>
+    </div>
+    <div class="output-wrapper">
+      <div class="flex-container">
+        <div class="button-container">
+          <button id="output-button">解答表示</button>
+          <button id="delete-button">消去</button>
+        </div>
+      </div>
+      <table id="sudoku-board" class="output">
+        <!-- 数独の盤面をここに表示 -->
+        <tr>
+          <td id="sudoku-output-cell-0-0"></td>
+          <td id="sudoku-output-cell-0-1"></td>
+          <td id="sudoku-output-cell-0-2"></td>
+          <td id="sudoku-output-cell-0-3"></td>
+          <td id="sudoku-output-cell-0-4"></td>
+          <td id="sudoku-output-cell-0-5"></td>
+          <td id="sudoku-output-cell-0-6"></td>
+          <td id="sudoku-output-cell-0-7"></td>
+          <td id="sudoku-output-cell-0-8"></td>
+        </tr>
+        <tr>
+          <td id="sudoku-output-cell-1-0"></td>
+          <td id="sudoku-output-cell-1-1"></td>
+          <td id="sudoku-output-cell-1-2"></td>
+          <td id="sudoku-output-cell-1-3"></td>
+          <td id="sudoku-output-cell-1-4"></td>
+          <td id="sudoku-output-cell-1-5"></td>
+          <td id="sudoku-output-cell-1-6"></td>
+          <td id="sudoku-output-cell-1-7"></td>
+          <td id="sudoku-output-cell-1-8"></td>
+        </tr>
+        <tr>
+          <td id="sudoku-output-cell-2-0"></td>
+          <td id="sudoku-output-cell-2-1"></td>
+          <td id="sudoku-output-cell-2-2"></td>
+          <td id="sudoku-output-cell-2-3"></td>
+          <td id="sudoku-output-cell-2-4"></td>
+          <td id="sudoku-output-cell-2-5"></td>
+          <td id="sudoku-output-cell-2-6"></td>
+          <td id="sudoku-output-cell-2-7"></td>
+          <td id="sudoku-output-cell-2-8"></td>
+        </tr>
+        <tr>
+          <td id="sudoku-output-cell-3-0"></td>
+          <td id="sudoku-output-cell-3-1"></td>
+          <td id="sudoku-output-cell-3-2"></td>
+          <td id="sudoku-output-cell-3-3"></td>
+          <td id="sudoku-output-cell-3-4"></td>
+          <td id="sudoku-output-cell-3-5"></td>
+          <td id="sudoku-output-cell-3-6"></td>
+          <td id="sudoku-output-cell-3-7"></td>
+          <td id="sudoku-output-cell-3-8"></td>
+        </tr>
+        <tr>
+          <td id="sudoku-output-cell-4-0"></td>
+          <td id="sudoku-output-cell-4-1"></td>
+          <td id="sudoku-output-cell-4-2"></td>
+          <td id="sudoku-output-cell-4-3"></td>
+          <td id="sudoku-output-cell-4-4"></td>
+          <td id="sudoku-output-cell-4-5"></td>
+          <td id="sudoku-output-cell-4-6"></td>
+          <td id="sudoku-output-cell-4-7"></td>
+          <td id="sudoku-output-cell-4-8"></td>
+        </tr>
+        <tr>
+          <td id="sudoku-output-cell-5-0"></td>
+          <td id="sudoku-output-cell-5-1"></td>
+          <td id="sudoku-output-cell-5-2"></td>
+          <td id="sudoku-output-cell-5-3"></td>
+          <td id="sudoku-output-cell-5-4"></td>
+          <td id="sudoku-output-cell-5-5"></td>
+          <td id="sudoku-output-cell-5-6"></td>
+          <td id="sudoku-output-cell-5-7"></td>
+          <td id="sudoku-output-cell-5-8"></td>
+        </tr>
+        <tr>
+          <td id="sudoku-output-cell-6-0"></td>
+          <td id="sudoku-output-cell-6-1"></td>
+          <td id="sudoku-output-cell-6-2"></td>
+          <td id="sudoku-output-cell-6-3"></td>
+          <td id="sudoku-output-cell-6-4"></td>
+          <td id="sudoku-output-cell-6-5"></td>
+          <td id="sudoku-output-cell-6-6"></td>
+          <td id="sudoku-output-cell-6-7"></td>
+          <td id="sudoku-output-cell-6-8"></td>
+        </tr>
+        <tr>
+          <td id="sudoku-output-cell-7-0"></td>
+          <td id="sudoku-output-cell-7-1"></td>
+          <td id="sudoku-output-cell-7-2"></td>
+          <td id="sudoku-output-cell-7-3"></td>
+          <td id="sudoku-output-cell-7-4"></td>
+          <td id="sudoku-output-cell-7-5"></td>
+          <td id="sudoku-output-cell-7-6"></td>
+          <td id="sudoku-output-cell-7-7"></td>
+          <td id="sudoku-output-cell-7-8"></td>
+        </tr>
+        <tr>
+          <td id="sudoku-output-cell-8-0"></td>
+          <td id="sudoku-output-cell-8-1"></td>
+          <td id="sudoku-output-cell-8-2"></td>
+          <td id="sudoku-output-cell-8-3"></td>
+          <td id="sudoku-output-cell-8-4"></td>
+          <td id="sudoku-output-cell-8-5"></td>
+          <td id="sudoku-output-cell-8-6"></td>
+          <td id="sudoku-output-cell-8-7"></td>
+          <td id="sudoku-output-cell-8-8"></td>
+        </tr>
+      <table>
     </div>
   </div>
-  <table id="sudoku-board" class="input">
-    <!-- 数独の盤面をここに表示 -->
-    <tr>
-      <td id="sudoku-input-cell-0-0" contenteditable="true"></td>
-      <td id="sudoku-input-cell-0-1" contenteditable="true"></td>
-      <td id="sudoku-input-cell-0-2" contenteditable="true"></td>
-      <td id="sudoku-input-cell-0-3" contenteditable="true"></td>
-      <td id="sudoku-input-cell-0-4" contenteditable="true"></td>
-      <td id="sudoku-input-cell-0-5" contenteditable="true"></td>
-      <td id="sudoku-input-cell-0-6" contenteditable="true"></td>
-      <td id="sudoku-input-cell-0-7" contenteditable="true"></td>
-      <td id="sudoku-input-cell-0-8" contenteditable="true"></td>
-    </tr>
-    <tr>
-      <td id="sudoku-input-cell-1-0" contenteditable="true"></td>
-      <td id="sudoku-input-cell-1-1" contenteditable="true"></td>
-      <td id="sudoku-input-cell-1-2" contenteditable="true"></td>
-      <td id="sudoku-input-cell-1-3" contenteditable="true"></td>
-      <td id="sudoku-input-cell-1-4" contenteditable="true"></td>
-      <td id="sudoku-input-cell-1-5" contenteditable="true"></td>
-      <td id="sudoku-input-cell-1-6" contenteditable="true"></td>
-      <td id="sudoku-input-cell-1-7" contenteditable="true"></td>
-      <td id="sudoku-input-cell-1-8" contenteditable="true"></td>
-    </tr>
-    <tr>
-      <td id="sudoku-input-cell-2-0" contenteditable="true"></td>
-      <td id="sudoku-input-cell-2-1" contenteditable="true"></td>
-      <td id="sudoku-input-cell-2-2" contenteditable="true"></td>
-      <td id="sudoku-input-cell-2-3" contenteditable="true"></td>
-      <td id="sudoku-input-cell-2-4" contenteditable="true"></td>
-      <td id="sudoku-input-cell-2-5" contenteditable="true"></td>
-      <td id="sudoku-input-cell-2-6" contenteditable="true"></td>
-      <td id="sudoku-input-cell-2-7" contenteditable="true"></td>
-      <td id="sudoku-input-cell-2-8" contenteditable="true"></td>
-    </tr>
-    <tr>
-      <td id="sudoku-input-cell-3-0" contenteditable="true"></td>
-      <td id="sudoku-input-cell-3-1" contenteditable="true"></td>
-      <td id="sudoku-input-cell-3-2" contenteditable="true"></td>
-      <td id="sudoku-input-cell-3-3" contenteditable="true"></td>
-      <td id="sudoku-input-cell-3-4" contenteditable="true"></td>
-      <td id="sudoku-input-cell-3-5" contenteditable="true"></td>
-      <td id="sudoku-input-cell-3-6" contenteditable="true"></td>
-      <td id="sudoku-input-cell-3-7" contenteditable="true"></td>
-      <td id="sudoku-input-cell-3-8" contenteditable="true"></td>
-    </tr>
-    <tr>
-      <td id="sudoku-input-cell-4-0" contenteditable="true"></td>
-      <td id="sudoku-input-cell-4-1" contenteditable="true"></td>
-      <td id="sudoku-input-cell-4-2" contenteditable="true"></td>
-      <td id="sudoku-input-cell-4-3" contenteditable="true"></td>
-      <td id="sudoku-input-cell-4-4" contenteditable="true"></td>
-      <td id="sudoku-input-cell-4-5" contenteditable="true"></td>
-      <td id="sudoku-input-cell-4-6" contenteditable="true"></td>
-      <td id="sudoku-input-cell-4-7" contenteditable="true"></td>
-      <td id="sudoku-input-cell-4-8" contenteditable="true"></td>
-    </tr>
-    <tr>
-      <td id="sudoku-input-cell-5-0" contenteditable="true"></td>
-      <td id="sudoku-input-cell-5-1" contenteditable="true"></td>
-      <td id="sudoku-input-cell-5-2" contenteditable="true"></td>
-      <td id="sudoku-input-cell-5-3" contenteditable="true"></td>
-      <td id="sudoku-input-cell-5-4" contenteditable="true"></td>
-      <td id="sudoku-input-cell-5-5" contenteditable="true"></td>
-      <td id="sudoku-input-cell-5-6" contenteditable="true"></td>
-      <td id="sudoku-input-cell-5-7" contenteditable="true"></td>
-      <td id="sudoku-input-cell-5-8" contenteditable="true"></td>
-    </tr>
-    <tr>
-      <td id="sudoku-input-cell-6-0" contenteditable="true"></td>
-      <td id="sudoku-input-cell-6-1" contenteditable="true"></td>
-      <td id="sudoku-input-cell-6-2" contenteditable="true"></td>
-      <td id="sudoku-input-cell-6-3" contenteditable="true"></td>
-      <td id="sudoku-input-cell-6-4" contenteditable="true"></td>
-      <td id="sudoku-input-cell-6-5" contenteditable="true"></td>
-      <td id="sudoku-input-cell-6-6" contenteditable="true"></td>
-      <td id="sudoku-input-cell-6-7" contenteditable="true"></td>
-      <td id="sudoku-input-cell-6-8" contenteditable="true"></td>
-    </tr>
-    <tr>
-      <td id="sudoku-input-cell-7-0" contenteditable="true"></td>
-      <td id="sudoku-input-cell-7-1" contenteditable="true"></td>
-      <td id="sudoku-input-cell-7-2" contenteditable="true"></td>
-      <td id="sudoku-input-cell-7-3" contenteditable="true"></td>
-      <td id="sudoku-input-cell-7-4" contenteditable="true"></td>
-      <td id="sudoku-input-cell-7-5" contenteditable="true"></td>
-      <td id="sudoku-input-cell-7-6" contenteditable="true"></td>
-      <td id="sudoku-input-cell-7-7" contenteditable="true"></td>
-      <td id="sudoku-input-cell-7-8" contenteditable="true"></td>
-    </tr>
-    <tr>
-      <td id="sudoku-input-cell-8-0" contenteditable="true"></td>
-      <td id="sudoku-input-cell-8-1" contenteditable="true"></td>
-      <td id="sudoku-input-cell-8-2" contenteditable="true"></td>
-      <td id="sudoku-input-cell-8-3" contenteditable="true"></td>
-      <td id="sudoku-input-cell-8-4" contenteditable="true"></td>
-      <td id="sudoku-input-cell-8-5" contenteditable="true"></td>
-      <td id="sudoku-input-cell-8-6" contenteditable="true"></td>
-      <td id="sudoku-input-cell-8-7" contenteditable="true"></td>
-      <td id="sudoku-input-cell-8-8" contenteditable="true"></td>
-    </tr>
-  <table>
-  <div class="flex-container">
-    <div class="button-container">
-      <button id="output-button">解答表示</button>
-      <button id="delete-button">消去</button>
-    </div>
-  </div>
-  <table id="sudoku-board" class="output">
-    <!-- 数独の盤面をここに表示 -->
-    <tr>
-      <td id="sudoku-output-cell-0-0"></td>
-      <td id="sudoku-output-cell-0-1"></td>
-      <td id="sudoku-output-cell-0-2"></td>
-      <td id="sudoku-output-cell-0-3"></td>
-      <td id="sudoku-output-cell-0-4"></td>
-      <td id="sudoku-output-cell-0-5"></td>
-      <td id="sudoku-output-cell-0-6"></td>
-      <td id="sudoku-output-cell-0-7"></td>
-      <td id="sudoku-output-cell-0-8"></td>
-    </tr>
-    <tr>
-      <td id="sudoku-output-cell-1-0"></td>
-      <td id="sudoku-output-cell-1-1"></td>
-      <td id="sudoku-output-cell-1-2"></td>
-      <td id="sudoku-output-cell-1-3"></td>
-      <td id="sudoku-output-cell-1-4"></td>
-      <td id="sudoku-output-cell-1-5"></td>
-      <td id="sudoku-output-cell-1-6"></td>
-      <td id="sudoku-output-cell-1-7"></td>
-      <td id="sudoku-output-cell-1-8"></td>
-    </tr>
-    <tr>
-      <td id="sudoku-output-cell-2-0"></td>
-      <td id="sudoku-output-cell-2-1"></td>
-      <td id="sudoku-output-cell-2-2"></td>
-      <td id="sudoku-output-cell-2-3"></td>
-      <td id="sudoku-output-cell-2-4"></td>
-      <td id="sudoku-output-cell-2-5"></td>
-      <td id="sudoku-output-cell-2-6"></td>
-      <td id="sudoku-output-cell-2-7"></td>
-      <td id="sudoku-output-cell-2-8"></td>
-    </tr>
-    <tr>
-      <td id="sudoku-output-cell-3-0"></td>
-      <td id="sudoku-output-cell-3-1"></td>
-      <td id="sudoku-output-cell-3-2"></td>
-      <td id="sudoku-output-cell-3-3"></td>
-      <td id="sudoku-output-cell-3-4"></td>
-      <td id="sudoku-output-cell-3-5"></td>
-      <td id="sudoku-output-cell-3-6"></td>
-      <td id="sudoku-output-cell-3-7"></td>
-      <td id="sudoku-output-cell-3-8"></td>
-    </tr>
-    <tr>
-      <td id="sudoku-output-cell-4-0"></td>
-      <td id="sudoku-output-cell-4-1"></td>
-      <td id="sudoku-output-cell-4-2"></td>
-      <td id="sudoku-output-cell-4-3"></td>
-      <td id="sudoku-output-cell-4-4"></td>
-      <td id="sudoku-output-cell-4-5"></td>
-      <td id="sudoku-output-cell-4-6"></td>
-      <td id="sudoku-output-cell-4-7"></td>
-      <td id="sudoku-output-cell-4-8"></td>
-    </tr>
-    <tr>
-      <td id="sudoku-output-cell-5-0"></td>
-      <td id="sudoku-output-cell-5-1"></td>
-      <td id="sudoku-output-cell-5-2"></td>
-      <td id="sudoku-output-cell-5-3"></td>
-      <td id="sudoku-output-cell-5-4"></td>
-      <td id="sudoku-output-cell-5-5"></td>
-      <td id="sudoku-output-cell-5-6"></td>
-      <td id="sudoku-output-cell-5-7"></td>
-      <td id="sudoku-output-cell-5-8"></td>
-    </tr>
-    <tr>
-      <td id="sudoku-output-cell-6-0"></td>
-      <td id="sudoku-output-cell-6-1"></td>
-      <td id="sudoku-output-cell-6-2"></td>
-      <td id="sudoku-output-cell-6-3"></td>
-      <td id="sudoku-output-cell-6-4"></td>
-      <td id="sudoku-output-cell-6-5"></td>
-      <td id="sudoku-output-cell-6-6"></td>
-      <td id="sudoku-output-cell-6-7"></td>
-      <td id="sudoku-output-cell-6-8"></td>
-    </tr>
-    <tr>
-      <td id="sudoku-output-cell-7-0"></td>
-      <td id="sudoku-output-cell-7-1"></td>
-      <td id="sudoku-output-cell-7-2"></td>
-      <td id="sudoku-output-cell-7-3"></td>
-      <td id="sudoku-output-cell-7-4"></td>
-      <td id="sudoku-output-cell-7-5"></td>
-      <td id="sudoku-output-cell-7-6"></td>
-      <td id="sudoku-output-cell-7-7"></td>
-      <td id="sudoku-output-cell-7-8"></td>
-    </tr>
-    <tr>
-      <td id="sudoku-output-cell-8-0"></td>
-      <td id="sudoku-output-cell-8-1"></td>
-      <td id="sudoku-output-cell-8-2"></td>
-      <td id="sudoku-output-cell-8-3"></td>
-      <td id="sudoku-output-cell-8-4"></td>
-      <td id="sudoku-output-cell-8-5"></td>
-      <td id="sudoku-output-cell-8-6"></td>
-      <td id="sudoku-output-cell-8-7"></td>
-      <td id="sudoku-output-cell-8-8"></td>
-    </tr>
-  <table>
   <script src="js/main.js"></script>
 </body>
 </html>
