@@ -1,3 +1,4 @@
 gunicorn
 hupper
 numpy
+psycopg2
