@@ -146,7 +146,7 @@ document.getElementById("output-button").addEventListener("click", async() =>{
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(inputValues),
+    body: JSON.stringify(inputValues), // JavaScriptオブジェクトをJSON形式の文字列へ変換(シリアライズ化)
   });
 
   // 解答を取得
