@@ -27,7 +27,7 @@ def fetch_data() -> str:
 
     # DBからデータを取得
     cur.execute("SELECT * FROM sudoku_schema.problems;")
-    data_from_db = cur.fetchone()[1]  # fetchoneは最初の行を返し、[1]はproblem列を取得
+    data_from_db = cur.fetchall()  # fetchoneは最初の行を返し、[1]はproblem列を取得
 
     # カーソルと接続を閉じる
     cur.close()

@@ -4,7 +4,7 @@ sys.path.append("/app") # PYTHONPATHへ一時的に追加
 from database.queries import save_data
 
 # 問題データ格納先
-problem_path = '/app/assets/result/L1_35_23.csv'
+problem_path = '/app/assets/result/L6_47_23.csv'
 problem_data = ''
 problem_data_to_save = ''
 
