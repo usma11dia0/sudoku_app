@@ -1,11 +1,14 @@
-import configparser
+import psycopg2
+import settings
 
-config = configparser.ConfigParser()
-config.read('config.ini')
+# DBに接続
+def connect_db():
+    conn = psycopg2.connect(
+        host=settings.POSTGRES_HOST,
+        database=settings.POSTGRES_DB,
+        user=settings.POSTGRES_USER,
+        password=settings.POSTGRES_USER,
+    )
+    return conn
 
-#環境設定
-CURRENT_ENV = 'local'
 
-env = config['CURRENT_ENV']
-
-HOST = env['']

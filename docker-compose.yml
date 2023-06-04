@@ -1,6 +1,21 @@
 version: '3'
 
 services:
+  db:
+    image: postgres:latest
+    container_name: postgres
+    command: -c 'config_file=/etc/postgresql/postgresql.conf'
+    ports:
+      - 5432:5432
+    volumes:
+      - db-store:/var/lib/postgresql/data
+      - ./backend/database/scripts:/docker-entrypoint-initdb.d
+      - ./backend/database/config/postgresql.conf:/etc/postgresql/postgresql.conf
+    environment:
+      - POSTGRES_PASSWORD=POSTGRES_PASSWORD
+    networks:
+      - app-network
+
   frontend:
     build: 
       context: ./frontend
@@ -26,6 +41,11 @@ services:
     container_name: backend_dev
     networks:
       - app-network
+    depends_on:
+      - db
+  
+volumes:
+  db-store:
 
 networks:
   app-network:
