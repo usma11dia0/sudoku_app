@@ -58,6 +58,21 @@ h1 {
   margin-bottom: 20px;
 }
 
+.problem-button {
+  margin-top: 4px;
+  cursor: pointer;
+  border: 2px solid $cWhite;
+  border-radius: 5px;
+  font-size: 15px;
+  background-color: $cWhite;
+  font-weight: bold;
+
+  &:hover {
+    background-color: $cBlack;
+    color: $cWhite;
+  }
+}
+
 #input-button, #output-button, #delete-input-button, #delete-output-button {
   display: block;
   margin: 0 50px;

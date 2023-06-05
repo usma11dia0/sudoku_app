@@ -46,6 +46,18 @@ h1 {
   align-items: center;
   margin-bottom: 20px; }
 
+.problem-button {
+  margin-top: 4px;
+  cursor: pointer;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  font-size: 15px;
+  background-color: #fff;
+  font-weight: bold; }
+  .problem-button:hover {
+    background-color: #333;
+    color: #fff; }
+
 #input-button, #output-button, #delete-input-button, #delete-output-button {
   display: block;
   margin: 0 50px;
