@@ -1,9 +1,9 @@
+import os
 import json 
-import pdb
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
 from core.solve_sudoku import solve_sudoku, input_grid
-
+from database.queries import fetch_data
 
 class SudokuHandler(BaseHTTPRequestHandler):
     def _send_response(self, content):
@@ -24,7 +24,7 @@ class SudokuHandler(BaseHTTPRequestHandler):
         self.end_headers()
     
     def do_POST(self):
-        if self.path == "/":
+        if self.path == "/api":
             # fetch APIのPOSTリクエストを受け取る
             content_len = int(self.headers.get("content-length"))
             request_body_json = self.rfile.read(content_len)
@@ -36,10 +36,19 @@ class SudokuHandler(BaseHTTPRequestHandler):
 
     # 確認用
     def do_GET(self):
-        if self.path == "/":
+        # 与えられたパスを最後の部分とそれ以前の部分に分割。
+        path_elements = os.path.split(self.path) 
+        endpoint, problem_id_str = path_elements
+        # DB内は0-indexedであるため合わせる
+        problem_id = int(problem_id_str) - 1
+        if endpoint == "/":
             solve_sudoku(input_grid)
             json_export_grid = json.dumps(input_grid)
             self._send_response(json_export_grid)
+        if endpoint == "/api/problem":
+            problem_data = fetch_data(problem_id)
+            response_body_json = json.dumps(problem_data)
+            self._send_response(response_body_json)
 
 if __name__ == "__main__":
     server_address = ("", 8000)

@@ -18,7 +18,7 @@ def save_data(data_to_save: str) -> None:
     cur.close()
     conn.close()
 
-def fetch_data() -> str:
+def fetch_data(num: int) -> str:
     # DBに接続
     conn = connect_db()
 
@@ -27,10 +27,11 @@ def fetch_data() -> str:
 
     # DBからデータを取得
     cur.execute("SELECT * FROM sudoku_schema.problems;")
-    data_from_db = cur.fetchall()  # fetchoneは最初の行を返し、[1]はproblem列を取得
+    data_from_db = cur.fetchall()
+    target_data = data_from_db[num][1]
 
     # カーソルと接続を閉じる
     cur.close()
     conn.close()
 
-    return data_from_db
+    return target_data

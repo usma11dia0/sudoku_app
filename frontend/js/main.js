@@ -22,6 +22,57 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 })
 
+// 画面読み込み時に各サンプル問題ボタンにイベントリスナーを付与
+document.addEventListener("DOMContentLoaded", function() {
+  const buttons = document.querySelectorAll('.problem-button')
+
+  buttons.forEach(function (button) {
+    button.addEventListener('click', async function() {
+      // ボタンのdata-button-number属性を取得
+      const buttonNumber = await this.dataset.buttonNumber;
+      
+      // サンプル問題盤面の値を取得
+      try {
+        const response = await fetch(`http://localhost:8000/api/problem/${buttonNumber}`)
+        if (!response.ok) {
+          throw new Error(`HTTP error status: ${response.status}`);
+        }
+        const problemData = await response.json();
+        
+        // サンプル問題盤面を入力
+        // 文字列を数値の2次元配列に変換
+        let formattedProblemData = [];
+        for (let i = 0; i < 9; i++){
+          let row = [];
+          for (let j = 0; j < 9; j++){
+            // 文字を数値に変換し、行の配列に追加
+            let number = parseInt(problemData[i * 9 + j])
+            // 0の場合は空文字に変換
+            number = number === 0 ? '' : number;
+            row.push(number);
+          }
+          // 行を2次元配列に追加
+          formattedProblemData.push(row);
+        }
+
+        // 盤面に入力
+        if (formattedProblemData) {
+          for (let i = 0; i < 9; i++){
+            for (let j = 0; j < 9; j++){
+              const cell = document.getElementById(`sudoku-input-cell-${i}-${j}`);
+              cell.textContent = formattedProblemData[i][j];
+            }
+          }
+        } else {
+          alert("問題が見つかりませんでした");
+        }
+      } catch (error) {
+        console.log(`Error fetching data: ${error}`);
+      }
+    })
+  })
+})
+
 // 入力ボタン (csvファイルを読み込んで盤面に表示)
 document.getElementById("input-button").addEventListener("click", async() => {
   const input = document.createElement('input');
@@ -54,7 +105,7 @@ document.getElementById("output-button").addEventListener("click", async() => {
   }
   
   // 入力盤面の値を送信
-  const response = await fetch("http://localhost:8000", {
+  const response = await fetch("http://localhost:8000/api", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
