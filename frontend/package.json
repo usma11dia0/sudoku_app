@@ -5,8 +5,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "npx http-server -p 8080",
-    "sass": "node-sass -w scss/ -o css/ --recursive"
+    "start": "npx http-server ./src -p 8080",
+    "sass": "node-sass -w ./src/scss/ -o ./src/css/ --recursive"
   },
   "author": "",
   "license": "ISC",

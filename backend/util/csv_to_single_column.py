@@ -2,8 +2,8 @@ import csv
 from collections import deque
 
 file_name = "L6_47_23.csv"
-input_path = f'../assets/original/{file_name}'
-output_path = f'../assets/result/{file_name}'
+input_path = f'../public/original/{file_name}'
+output_path = f'../public/result/{file_name}'
 
 d = deque()
 

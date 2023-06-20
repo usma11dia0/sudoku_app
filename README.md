@@ -25,12 +25,12 @@
 
 ---
 ## ローカル起動方法
-1. git cloneにてローカルに`sudoku_app`を取り入れる。  
+1. git cloneにてローカルにsudoku_appを取り入れる。  
 2. ルートディレクトリに`.env`ファイルを作成
 ```yaml:.env
 POSTGRES_PASSWORD=postgres
 ```
-3. `./backend/`配下に、`config.ini`ファイルを作成
+3. **./backend/**配下に、`config.ini`ファイルを作成
 ```yaml:config.ini
 [local]
 POSTGRES_HOST = db
