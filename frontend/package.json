@@ -6,12 +6,15 @@
   "main": "index.js",
   "scripts": {
     "start": "npx http-server ./src -p 8080",
-    "sass": "node-sass -w ./src/scss/ -o ./src/css/ --recursive"
+    "sass": "node-sass -w ./src/scss/ -o ./src/css/ --recursive",
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "http-server": "^14.0.0",
-    "node-sass": "^8.0.0"
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "node-sass": "^9.0.0",
+    "webpack": "^5.87.0",
+    "webpack-cli": "^5.1.4"
   }
 }
