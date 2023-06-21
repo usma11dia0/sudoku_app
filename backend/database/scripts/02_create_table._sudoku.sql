@@ -14,4 +14,4 @@ GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA sudoku_schema TO sudoku_user;
 -- -- サンプルデータの挿入
 -- \copy my_table(column1) FROM '/path/to/your/file.csv' DELIMITER ',' CSV;
 
--- /home/usma11dia0/dev/sudoku_app/backend/public/result/L1_35_23.csv
+-- /home/usma11dia0/dev/sudoku_app/backend/assets/result/L1_35_23.csv
