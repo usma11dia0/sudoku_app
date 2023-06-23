@@ -1,13 +1,11 @@
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+import path from 'path';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
-module.exports = {
-    mode: 'production',
+export const commonConf = ({outputFile, assetFile}) => ({
     entry: './src/index.js',
     output: {
-      filename: 'main.js',
       path: path.resolve(__dirname, 'public'),
+      filename: `${outputFile}.js`,
     },
     module: {
         rules: [
@@ -37,7 +35,7 @@ module.exports = {
               {
                 loader: 'file-loader',
                 options: {
-                  name: '[name].[ext]',
+                  name: `${assetFile}.[ext]`,
                   outputPath: 'public/icons',
                   publicPath: 'public/icons', //サーバー上のパス情報
                 }
@@ -52,11 +50,8 @@ module.exports = {
     },
     plugins:[
       new MiniCssExtractPlugin({
-        filename: '[name].css'
-      }),
-      new HtmlWebpackPlugin({
-        template: './src index.html',
-        inject: 'body'
+        filename: `${outputFile}.css`,
       })
-    ],
-  };
+    ]
+  }
+);

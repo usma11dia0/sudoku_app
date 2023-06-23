@@ -7,7 +7,9 @@
   "scripts": {
     "start": "npx http-server ./src -p 8080",
     "sass": "node-sass -w ./src/scss/ -o ./src/css/ --recursive",
-    "build": "webpack"
+    "dev": "npm run cleanup && npx webpack --config ./webpack.dev.js",
+    "build": "npm run cleanup && npx webpack --config ./webpack.prod.js",
+    "cleanup": "npx rimraf ./public"
   },
   "author": "",
   "license": "ISC",
@@ -18,8 +20,10 @@
     "http-server": "^14.1.1",
     "mini-css-extract-plugin": "^2.7.6",
     "node-sass": "^9.0.0",
+    "rimraf": "^5.0.1",
     "style-loader": "^3.3.3",
     "webpack": "^5.87.0",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-merge": "^5.9.0"
   }
 }
