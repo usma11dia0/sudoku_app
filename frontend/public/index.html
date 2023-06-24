@@ -1,0 +1,445 @@
+Html Webpack Plugin:
+<pre>
+  Error: Child compilation failed:
+  Module not found: Error: Can't resolve 'file-loader' in '/app'
+  ModuleNotFoundError: Module not found: Error: Can't resolve 'file-loader' in '/app'
+      at /app/node_modules/webpack/lib/Compilation.js:2022:28
+      at /app/node_modules/webpack/lib/NormalModuleFactory.js:817:13
+      at eval (eval at create (/app/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:10:1)
+      at /app/node_modules/webpack/lib/NormalModuleFactory.js:275:22
+      at eval (eval at create (/app/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:9:1)
+      at /app/node_modules/webpack/lib/NormalModuleFactory.js:560:15
+      at /app/node_modules/webpack/lib/NormalModuleFactory.js:118:11
+      at /app/node_modules/webpack/lib/NormalModuleFactory.js:631:8
+      at /app/node_modules/neo-async/async.js:2830:7
+      at done (/app/node_modules/neo-async/async.js:2925:13)
+  Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):
+  HookWebpackError: Cannot find module '../assets/font/851CHIKARA-YOWAKU_002.ttf'
+      at tryRunOrWebpackError (/app/node_modules/webpack/lib/HookWebpackError.js:88:9)
+      at __webpack_require_module__ (/app/node_modules/webpack/lib/Compilation.js:5066:12)
+      at __webpack_require__ (/app/node_modules/webpack/lib/Compilation.js:5023:18)
+      at /app/node_modules/webpack/lib/Compilation.js:5094:20
+      at symbolIterator (/app/node_modules/neo-async/async.js:3485:9)
+      at done (/app/node_modules/neo-async/async.js:3527:9)
+      at Hook.eval [as callAsync] (eval at create (/app/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:15:1)
+      at /app/node_modules/webpack/lib/Compilation.js:5001:43
+      at symbolIterator (/app/node_modules/neo-async/async.js:3482:9)
+      at timesSync (/app/node_modules/neo-async/async.js:2297:7)
+  -- inner error --
+  Error: Cannot find module '../assets/font/851CHIKARA-YOWAKU_002.ttf'
+      at webpackMissingModule (/app/node_modules/css-loader/dist/cjs.js!/app/src/css/style.css:15:131)
+      at Module.<anonymous> (/app/node_modules/css-loader/dist/cjs.js!/app/src/css/style.css:15:246)
+      at /app/node_modules/webpack/lib/javascript/JavascriptModulesPlugin.js:439:10
+      at Hook.eval [as call] (eval at create (/app/node_modules/tapable/lib/HookCodeFactory.js:19:10), <anonymous>:7:1)
+      at /app/node_modules/webpack/lib/Compilation.js:5068:39
+      at tryRunOrWebpackError (/app/node_modules/webpack/lib/HookWebpackError.js:83:7)
+      at __webpack_require_module__ (/app/node_modules/webpack/lib/Compilation.js:5066:12)
+      at __webpack_require__ (/app/node_modules/webpack/lib/Compilation.js:5023:18)
+      at /app/node_modules/webpack/lib/Compilation.js:5094:20
+      at symbolIterator (/app/node_modules/neo-async/async.js:3485:9)
+  
+  Generated code for /app/node_modules/css-loader/dist/cjs.js!/app/src/css/style.css
+    1 | __webpack_require__.r(__webpack_exports__);
+    2 | /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+    3 | /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+    4 | /* harmony export */ });
+    5 | /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "/app/node_modules/css-lo  ader/dist/runtime/sourceMaps.js");
+    6 | /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPOR  TED_MODULE_0__);
+    7 | /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "/app/node_modules/css-loader/dist/runt  ime/api.js");
+    8 | /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__  );
+    9 | /* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ "/app/node_modules/css-loader/dis  t/runtime/getUrl.js");
+   10 | /* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODU  LE_2__);
+   11 | // Imports
+   12 | 
+   13 | 
+   14 | 
+   15 | var ___CSS_LOADER_URL_IMPORT_0___ = /* asset import */ new __webpack_require__.U(Object(function webpackMissingModule() { var e = new Error("Cannot find module '../assets/font/851CHIKARA-YOWAKU_002.ttf'"); e.code = 'M  ODULE_NOT_FOUND'; throw e; }()));
+   16 | var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+   17 | var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
+   18 | // Module
+   19 | ___CSS_LOADER_EXPORT___.push([module.id, `@font-face {
+   20 |   font-family: 'Myfont';
+   21 |   src: url(${___CSS_LOADER_URL_REPLACEMENT_0___}); }
+   22 | 
+   23 | header {
+   24 |   background-color: #333;
+   25 |   color: #fff;
+   26 |   padding: 10px 0;
+   27 |   text-align: center;
+   28 |   margin-bottom: 40px;
+   29 |   font-family: 'Myfont', sans-serif; }
+   30 | 
+   31 | body {
+   32 |   height: 100vh;
+   33 |   margin: 0;
+   34 |   background-color: #f5f5f5;
+   35 |   font-family: 'Myfont', sans-serif; }
+   36 | 
+   37 | h1 {
+   38 |   text-align: center; }
+   39 | 
+   40 | .wrapper {
+   41 |   display: flex;
+   42 |   flex-direction: column;
+   43 |   align-items: center; }
+   44 |   @media (min-width: 1280px) {
+   45 |     .wrapper {
+   46 |       flex-direction: row;
+   47 |       justify-content: space-evenly;
+   48 |       align-items: center; } }
+   49 | 
+   50 | .input-wrapper, .output-wrapper {
+   51 |   width: 100%;
+   52 |   margin-bottom: 20px; }
+   53 |   @media (min-width: 1280px) {
+   54 |     .input-wrapper, .output-wrapper {
+   55 |       width: auto; } }
+   56 | 
+   57 | .flex-container {
+   58 |   display: flex;
+   59 |   justify-content: center; }
+   60 | 
+   61 | .button-container {
+   62 |   display: flex;
+   63 |   justify-content: space-between;
+   64 |   align-items: center;
+   65 |   margin-bottom: 20px; }
+   66 | 
+   67 | .problem-button {
+   68 |   margin-top: 4px;
+   69 |   cursor: pointer;
+   70 |   border: 2px solid #fff;
+   71 |   border-radius: 5px;
+   72 |   font-size: 15px;
+   73 |   background-color: #fff;
+   74 |   font-weight: bold; }
+   75 |   .problem-button:hover {
+   76 |     background-color: #333;
+   77 |     color: #fff; }
+   78 | 
+   79 | #input-button, #output-button, #delete-input-button, #delete-output-button {
+   80 |   display: block;
+   81 |   margin: 0 50px;
+   82 |   padding: 10px 20px;
+   83 |   border: 2px solid #333;
+   84 |   border-radius: 5px;
+   85 |   background-color: #fff;
+   86 |   font-size: 15px;
+   87 |   font-weight: bold;
+   88 |   cursor: pointer;
+   89 |   transition: all 0.2s ease-in-out;
+   90 |   font-family: 'Myfont', sans-serif; }
+   91 |   #input-button:hover, #output-button:hover, #delete-input-button:hover, #delete-output-button:hover {
+   92 |     background-color: #333;
+   93 |     color: #fff; }
+   94 | 
+   95 | #sudoku-board {
+   96 |   border-collapse: collapse;
+   97 |   margin: 0 auto;
+   98 |   border: 2px solid #333;
+   99 |   margin-bottom: 20px; }
+  100 |   #sudoku-board td {
+  101 |     border: 1px solid #ccc;
+  102 |     height: 50px;
+  103 |     width: 50px;
+  104 |     text-align: center;
+  105 |     vertical-align: middle;
+  106 |     font-size: 20px;
+  107 |     font-weight: bold;
+  108 |     color: transparent;
+  109 |     text-shadow: 0 0 0 #333;
+  110 |     cursor: pointer; }
+  111 |     #sudoku-board td:nth-child(3n) {
+  112 |       border-right: 2px solid #333; }
+  113 |   #sudoku-board tr:nth-child(3n) td {
+  114 |     border-bottom: 2px solid #333; }
+  115 | 
+  116 | .highlighted {
+  117 |   background-color: #f3edea; }
+  118 | `, "",{"version":3,"sources":["webpack://./src/css/style.css"],"names":[],"mappings":"AAAA;EACE,qBAAqB;EACrB,4CAAoD,EAAE;;AAExD;EACE,sBAAsB;EACtB,WAAW;EACX,eAAe;EACf,kBAAkB;EAClB,mBAAmB;EACnB,iCAAiC,EAAE;;AAErC;EACE,a  AAa;EACb,SAAS;EACT,yBAAyB;EACzB,iCAAiC,EAAE;;AAErC;EACE,kBAAkB,EAAE;;AAEtB;EACE,aAAa;EACb,sBAAsB;EACtB,mBAAmB,EAAE;EACrB;IACE;MACE,mBAAmB;MACnB,6BAA6B;MAC7B,mBAAmB,EAAE,EAAE;;AAE7B;EACE,WAAW;EACX,mBAAmB,EAAE;EACrB;IACE;MACE  ,WAAW,EAAE,EAAE;;AAErB;EACE,aAAa;EACb,uBAAuB,EAAE;;AAE3B;EACE,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;EACnB,mBAAmB,EAAE;;AAEvB;EACE,eAAe;EACf,eAAe;EACf,sBAAsB;EACtB,kBAAkB;EAClB,eAAe;EACf,sBAAsB;EACtB,iBAAiB,EAAE;EACnB;IACE,sBAAsB;IA  CtB,WAAW,EAAE;;AAEjB;EACE,cAAc;EACd,cAAc;EACd,kBAAkB;EAClB,sBAAsB;EACtB,kBAAkB;EAClB,sBAAsB;EACtB,eAAe;EACf,iBAAiB;EACjB,eAAe;EACf,gCAAgC;EAChC,iCAAiC,EAAE;EACnC;IACE,sBAAsB;IACtB,WAAW,EAAE;;AAEjB;EACE,yBAAyB;EACzB,cAAc;EAC  d,sBAAsB;EACtB,mBAAmB,EAAE;EACrB;IACE,sBAAsB;IACtB,YAAY;IACZ,WAAW;IACX,kBAAkB;IAClB,sBAAsB;IACtB,eAAe;IACf,iBAAiB;IACjB,kBAAkB;IAClB,uBAAuB;IACvB,eAAe,EAAE;IACjB;MACE,4BAA4B,EAAE;EAClC;IACE,6BAA6B,EAAE;;AAEnC;EACE,yBAAyB,EA  AE","sourcesContent":["@font-face {\n  font-family: 'Myfont';\n  src: url(\"../assets/font/851CHIKARA-YOWAKU_002.ttf\"); }\n\nheader {\n  background-color: #333;\n  color: #fff;\n  padding: 10px 0;\n  text-align: center;\n    margin-bottom: 40px;\n  font-family: 'Myfont', sans-serif; }\n\nbody {\n  height: 100vh;\n  margin: 0;\n  background-color: #f5f5f5;\n  font-family: 'Myfont', sans-serif; }\n\nh1 {\n  text-align: center; }\n\n.wrapper {\n    display: flex;\n  flex-direction: column;\n  align-items: center; }\n  @media (min-width: 1280px) {\n    .wrapper {\n      flex-direction: row;\n      justify-content: space-evenly;\n      align-items: center; } }\n\n.inpu  t-wrapper, .output-wrapper {\n  width: 100%;\n  margin-bottom: 20px; }\n  @media (min-width: 1280px) {\n    .input-wrapper, .output-wrapper {\n      width: auto; } }\n\n.flex-container {\n  display: flex;\n  justify-content  : center; }\n\n.button-container {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 20px; }\n\n.problem-button {\n  margin-top: 4px;\n  cursor: pointer;\n  border: 2px solid #ff  f;\n  border-radius: 5px;\n  font-size: 15px;\n  background-color: #fff;\n  font-weight: bold; }\n  .problem-button:hover {\n    background-color: #333;\n    color: #fff; }\n\n#input-button, #output-button, #delete-input-bu  tton, #delete-output-button {\n  display: block;\n  margin: 0 50px;\n  padding: 10px 20px;\n  border: 2px solid #333;\n  border-radius: 5px;\n  background-color: #fff;\n  font-size: 15px;\n  font-weight: bold;\n  cursor: po  inter;\n  transition: all 0.2s ease-in-out;\n  font-family: 'Myfont', sans-serif; }\n  #input-button:hover, #output-button:hover, #delete-input-button:hover, #delete-output-button:hover {\n    background-color: #333;\n    c  olor: #fff; }\n\n#sudoku-board {\n  border-collapse: collapse;\n  margin: 0 auto;\n  border: 2px solid #333;\n  margin-bottom: 20px; }\n  #sudoku-board td {\n    border: 1px solid #ccc;\n    height: 50px;\n    width: 50px;\  n    text-align: center;\n    vertical-align: middle;\n    font-size: 20px;\n    font-weight: bold;\n    color: transparent;\n    text-shadow: 0 0 0 #333;\n    cursor: pointer; }\n    #sudoku-board td:nth-child(3n) {\n        border-right: 2px solid #333; }\n  #sudoku-board tr:nth-child(3n) td {\n    border-bottom: 2px solid #333; }\n\n.highlighted {\n  background-color: #f3edea; }\n"],"sourceRoot":""}]);
+  119 | // Exports
+  120 | /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+  121 | 
+  ModuleBuildError: Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):
+  HookWebpackError: Cannot find module '../assets/font/851CHIKARA-YOWAKU_002.ttf'
+      at tryRunOrWebpackError (/app/node_modules/webpack/lib/HookWebpackError.js:88:9)
+      at __webpack_require_module__ (/app/node_modules/webpack/lib/Compilation.js:5066:12)
+      at __webpack_require__ (/app/node_modules/webpack/lib/Compilation.js:5023:18)
+      at /app/node_modules/webpack/lib/Compilation.js:5094:20
+      at symbolIterator (/app/node_modules/neo-async/async.js:3485:9)
+      at done (/app/node_modules/neo-async/async.js:3527:9)
+      at Hook.eval [as callAsync] (eval at create (/app/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:15:1)
+      at /app/node_modules/webpack/lib/Compilation.js:5001:43
+      at symbolIterator (/app/node_modules/neo-async/async.js:3482:9)
+      at timesSync (/app/node_modules/neo-async/async.js:2297:7)
+  -- inner error --
+  Error: Cannot find module '../assets/font/851CHIKARA-YOWAKU_002.ttf'
+      at webpackMissingModule (/app/node_modules/css-loader/dist/cjs.js!/app/src/css/style.css:15:131)
+      at Module.<anonymous> (/app/node_modules/css-loader/dist/cjs.js!/app/src/css/style.css:15:246)
+      at /app/node_modules/webpack/lib/javascript/JavascriptModulesPlugin.js:439:10
+      at Hook.eval [as call] (eval at create (/app/node_modules/tapable/lib/HookCodeFactory.js:19:10), <anonymous>:7:1)
+      at /app/node_modules/webpack/lib/Compilation.js:5068:39
+      at tryRunOrWebpackError (/app/node_modules/webpack/lib/HookWebpackError.js:83:7)
+      at __webpack_require_module__ (/app/node_modules/webpack/lib/Compilation.js:5066:12)
+      at __webpack_require__ (/app/node_modules/webpack/lib/Compilation.js:5023:18)
+      at /app/node_modules/webpack/lib/Compilation.js:5094:20
+      at symbolIterator (/app/node_modules/neo-async/async.js:3485:9)
+  
+  Generated code for /app/node_modules/css-loader/dist/cjs.js!/app/src/css/style.css
+    1 | __webpack_require__.r(__webpack_exports__);
+    2 | /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+    3 | /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+    4 | /* harmony export */ });
+    5 | /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "/app/node_modules/css-lo  ader/dist/runtime/sourceMaps.js");
+    6 | /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPOR  TED_MODULE_0__);
+    7 | /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "/app/node_modules/css-loader/dist/runt  ime/api.js");
+    8 | /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__  );
+    9 | /* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ "/app/node_modules/css-loader/dis  t/runtime/getUrl.js");
+   10 | /* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODU  LE_2__);
+   11 | // Imports
+   12 | 
+   13 | 
+   14 | 
+   15 | var ___CSS_LOADER_URL_IMPORT_0___ = /* asset import */ new __webpack_require__.U(Object(function webpackMissingModule() { var e = new Error("Cannot find module '../assets/font/851CHIKARA-YOWAKU_002.ttf'"); e.code = 'M  ODULE_NOT_FOUND'; throw e; }()));
+   16 | var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+   17 | var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
+   18 | // Module
+   19 | ___CSS_LOADER_EXPORT___.push([module.id, `@font-face {
+   20 |   font-family: 'Myfont';
+   21 |   src: url(${___CSS_LOADER_URL_REPLACEMENT_0___}); }
+   22 | 
+   23 | header {
+   24 |   background-color: #333;
+   25 |   color: #fff;
+   26 |   padding: 10px 0;
+   27 |   text-align: center;
+   28 |   margin-bottom: 40px;
+   29 |   font-family: 'Myfont', sans-serif; }
+   30 | 
+   31 | body {
+   32 |   height: 100vh;
+   33 |   margin: 0;
+   34 |   background-color: #f5f5f5;
+   35 |   font-family: 'Myfont', sans-serif; }
+   36 | 
+   37 | h1 {
+   38 |   text-align: center; }
+   39 | 
+   40 | .wrapper {
+   41 |   display: flex;
+   42 |   flex-direction: column;
+   43 |   align-items: center; }
+   44 |   @media (min-width: 1280px) {
+   45 |     .wrapper {
+   46 |       flex-direction: row;
+   47 |       justify-content: space-evenly;
+   48 |       align-items: center; } }
+   49 | 
+   50 | .input-wrapper, .output-wrapper {
+   51 |   width: 100%;
+   52 |   margin-bottom: 20px; }
+   53 |   @media (min-width: 1280px) {
+   54 |     .input-wrapper, .output-wrapper {
+   55 |       width: auto; } }
+   56 | 
+   57 | .flex-container {
+   58 |   display: flex;
+   59 |   justify-content: center; }
+   60 | 
+   61 | .button-container {
+   62 |   display: flex;
+   63 |   justify-content: space-between;
+   64 |   align-items: center;
+   65 |   margin-bottom: 20px; }
+   66 | 
+   67 | .problem-button {
+   68 |   margin-top: 4px;
+   69 |   cursor: pointer;
+   70 |   border: 2px solid #fff;
+   71 |   border-radius: 5px;
+   72 |   font-size: 15px;
+   73 |   background-color: #fff;
+   74 |   font-weight: bold; }
+   75 |   .problem-button:hover {
+   76 |     background-color: #333;
+   77 |     color: #fff; }
+   78 | 
+   79 | #input-button, #output-button, #delete-input-button, #delete-output-button {
+   80 |   display: block;
+   81 |   margin: 0 50px;
+   82 |   padding: 10px 20px;
+   83 |   border: 2px solid #333;
+   84 |   border-radius: 5px;
+   85 |   background-color: #fff;
+   86 |   font-size: 15px;
+   87 |   font-weight: bold;
+   88 |   cursor: pointer;
+   89 |   transition: all 0.2s ease-in-out;
+   90 |   font-family: 'Myfont', sans-serif; }
+   91 |   #input-button:hover, #output-button:hover, #delete-input-button:hover, #delete-output-button:hover {
+   92 |     background-color: #333;
+   93 |     color: #fff; }
+   94 | 
+   95 | #sudoku-board {
+   96 |   border-collapse: collapse;
+   97 |   margin: 0 auto;
+   98 |   border: 2px solid #333;
+   99 |   margin-bottom: 20px; }
+  100 |   #sudoku-board td {
+  101 |     border: 1px solid #ccc;
+  102 |     height: 50px;
+  103 |     width: 50px;
+  104 |     text-align: center;
+  105 |     vertical-align: middle;
+  106 |     font-size: 20px;
+  107 |     font-weight: bold;
+  108 |     color: transparent;
+  109 |     text-shadow: 0 0 0 #333;
+  110 |     cursor: pointer; }
+  111 |     #sudoku-board td:nth-child(3n) {
+  112 |       border-right: 2px solid #333; }
+  113 |   #sudoku-board tr:nth-child(3n) td {
+  114 |     border-bottom: 2px solid #333; }
+  115 | 
+  116 | .highlighted {
+  117 |   background-color: #f3edea; }
+  118 | `, "",{"version":3,"sources":["webpack://./src/css/style.css"],"names":[],"mappings":"AAAA;EACE,qBAAqB;EACrB,4CAAoD,EAAE;;AAExD;EACE,sBAAsB;EACtB,WAAW;EACX,eAAe;EACf,kBAAkB;EAClB,mBAAmB;EACnB,iCAAiC,EAAE;;AAErC;EACE,a  AAa;EACb,SAAS;EACT,yBAAyB;EACzB,iCAAiC,EAAE;;AAErC;EACE,kBAAkB,EAAE;;AAEtB;EACE,aAAa;EACb,sBAAsB;EACtB,mBAAmB,EAAE;EACrB;IACE;MACE,mBAAmB;MACnB,6BAA6B;MAC7B,mBAAmB,EAAE,EAAE;;AAE7B;EACE,WAAW;EACX,mBAAmB,EAAE;EACrB;IACE;MACE  ,WAAW,EAAE,EAAE;;AAErB;EACE,aAAa;EACb,uBAAuB,EAAE;;AAE3B;EACE,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;EACnB,mBAAmB,EAAE;;AAEvB;EACE,eAAe;EACf,eAAe;EACf,sBAAsB;EACtB,kBAAkB;EAClB,eAAe;EACf,sBAAsB;EACtB,iBAAiB,EAAE;EACnB;IACE,sBAAsB;IA  CtB,WAAW,EAAE;;AAEjB;EACE,cAAc;EACd,cAAc;EACd,kBAAkB;EAClB,sBAAsB;EACtB,kBAAkB;EAClB,sBAAsB;EACtB,eAAe;EACf,iBAAiB;EACjB,eAAe;EACf,gCAAgC;EAChC,iCAAiC,EAAE;EACnC;IACE,sBAAsB;IACtB,WAAW,EAAE;;AAEjB;EACE,yBAAyB;EACzB,cAAc;EAC  d,sBAAsB;EACtB,mBAAmB,EAAE;EACrB;IACE,sBAAsB;IACtB,YAAY;IACZ,WAAW;IACX,kBAAkB;IAClB,sBAAsB;IACtB,eAAe;IACf,iBAAiB;IACjB,kBAAkB;IAClB,uBAAuB;IACvB,eAAe,EAAE;IACjB;MACE,4BAA4B,EAAE;EAClC;IACE,6BAA6B,EAAE;;AAEnC;EACE,yBAAyB,EA  AE","sourcesContent":["@font-face {\n  font-family: 'Myfont';\n  src: url(\"../assets/font/851CHIKARA-YOWAKU_002.ttf\"); }\n\nheader {\n  background-color: #333;\n  color: #fff;\n  padding: 10px 0;\n  text-align: center;\n    margin-bottom: 40px;\n  font-family: 'Myfont', sans-serif; }\n\nbody {\n  height: 100vh;\n  margin: 0;\n  background-color: #f5f5f5;\n  font-family: 'Myfont', sans-serif; }\n\nh1 {\n  text-align: center; }\n\n.wrapper {\n    display: flex;\n  flex-direction: column;\n  align-items: center; }\n  @media (min-width: 1280px) {\n    .wrapper {\n      flex-direction: row;\n      justify-content: space-evenly;\n      align-items: center; } }\n\n.inpu  t-wrapper, .output-wrapper {\n  width: 100%;\n  margin-bottom: 20px; }\n  @media (min-width: 1280px) {\n    .input-wrapper, .output-wrapper {\n      width: auto; } }\n\n.flex-container {\n  display: flex;\n  justify-content  : center; }\n\n.button-container {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 20px; }\n\n.problem-button {\n  margin-top: 4px;\n  cursor: pointer;\n  border: 2px solid #ff  f;\n  border-radius: 5px;\n  font-size: 15px;\n  background-color: #fff;\n  font-weight: bold; }\n  .problem-button:hover {\n    background-color: #333;\n    color: #fff; }\n\n#input-button, #output-button, #delete-input-bu  tton, #delete-output-button {\n  display: block;\n  margin: 0 50px;\n  padding: 10px 20px;\n  border: 2px solid #333;\n  border-radius: 5px;\n  background-color: #fff;\n  font-size: 15px;\n  font-weight: bold;\n  cursor: po  inter;\n  transition: all 0.2s ease-in-out;\n  font-family: 'Myfont', sans-serif; }\n  #input-button:hover, #output-button:hover, #delete-input-button:hover, #delete-output-button:hover {\n    background-color: #333;\n    c  olor: #fff; }\n\n#sudoku-board {\n  border-collapse: collapse;\n  margin: 0 auto;\n  border: 2px solid #333;\n  margin-bottom: 20px; }\n  #sudoku-board td {\n    border: 1px solid #ccc;\n    height: 50px;\n    width: 50px;\  n    text-align: center;\n    vertical-align: middle;\n    font-size: 20px;\n    font-weight: bold;\n    color: transparent;\n    text-shadow: 0 0 0 #333;\n    cursor: pointer; }\n    #sudoku-board td:nth-child(3n) {\n        border-right: 2px solid #333; }\n  #sudoku-board tr:nth-child(3n) td {\n    border-bottom: 2px solid #333; }\n\n.highlighted {\n  background-color: #f3edea; }\n"],"sourceRoot":""}]);
+  119 | // Exports
+  120 | /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+  121 | 
+      at processResult (/app/node_modules/webpack/lib/NormalModule.js:764:19)
+      at /app/node_modules/webpack/lib/NormalModule.js:866:5
+      at /app/node_modules/loader-runner/lib/LoaderRunner.js:400:11
+      at /app/node_modules/loader-runner/lib/LoaderRunner.js:195:20
+      at context.callback (/app/node_modules/loader-runner/lib/LoaderRunner.js:124:13)
+      at /app/node_modules/mini-css-extract-plugin/dist/loader.js:231:9
+      at /app/node_modules/webpack/lib/dependencies/LoaderPlugin.js:208:27
+      at /app/node_modules/webpack/lib/Compilation.js:5103:17
+      at symbolIterator (/app/node_modules/neo-async/async.js:3485:9)
+      at done (/app/node_modules/neo-async/async.js:3527:9)
+  
+  - Compilation.js:2022 
+    [app]/[webpack]/lib/Compilation.js:2022:28
+  
+  - NormalModuleFactory.js:817 
+    [app]/[webpack]/lib/NormalModuleFactory.js:817:13
+  
+  
+  - NormalModuleFactory.js:275 
+    [app]/[webpack]/lib/NormalModuleFactory.js:275:22
+  
+  
+  - NormalModuleFactory.js:560 
+    [app]/[webpack]/lib/NormalModuleFactory.js:560:15
+  
+  - NormalModuleFactory.js:118 
+    [app]/[webpack]/lib/NormalModuleFactory.js:118:11
+  
+  - NormalModuleFactory.js:631 
+    [app]/[webpack]/lib/NormalModuleFactory.js:631:8
+  
+  - async.js:2830 
+    [app]/[neo-async]/async.js:2830:7
+  
+  - async.js:2925 done
+    [app]/[neo-async]/async.js:2925:13
+  
+  - Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):
+  
+  - HookWebpackError: Cannot find module '../assets/font/851CHIKARA-YOWAKU_002.ttf'
+  
+  - HookWebpackError.js:88 tryRunOrWebpackError
+    [app]/[webpack]/lib/HookWebpackError.js:88:9
+  
+  - Compilation.js:5066 __webpack_require_module__
+    [app]/[webpack]/lib/Compilation.js:5066:12
+  
+  - Compilation.js:5023 __webpack_require__
+    [app]/[webpack]/lib/Compilation.js:5023:18
+  
+  - Compilation.js:5094 
+    [app]/[webpack]/lib/Compilation.js:5094:20
+  
+  - async.js:3485 symbolIterator
+    [app]/[neo-async]/async.js:3485:9
+  
+  - async.js:3527 done
+    [app]/[neo-async]/async.js:3527:9
+  
+  
+  - Compilation.js:5001 
+    [app]/[webpack]/lib/Compilation.js:5001:43
+  
+  - async.js:3482 symbolIterator
+    [app]/[neo-async]/async.js:3482:9
+  
+  - async.js:2297 timesSync
+    [app]/[neo-async]/async.js:2297:7
+  
+  - -- inner error --
+  
+  - Error: Cannot find module '../assets/font/851CHIKARA-YOWAKU_002.ttf'
+  
+  - style.css:15 webpackMissingModule
+    [app]/[css-loader]/dist/cjs.js!/app/src/css/style.css:15:131
+  
+  - style.css:15 Module.<anonymous>
+    [app]/[css-loader]/dist/cjs.js!/app/src/css/style.css:15:246
+  
+  - JavascriptModulesPlugin.js:439 
+    [app]/[webpack]/lib/javascript/JavascriptModulesPlugin.js:439:10
+  
+  
+  - Compilation.js:5068 
+    [app]/[webpack]/lib/Compilation.js:5068:39
+  
+  - HookWebpackError.js:83 tryRunOrWebpackError
+    [app]/[webpack]/lib/HookWebpackError.js:83:7
+  
+  - Compilation.js:5066 __webpack_require_module__
+    [app]/[webpack]/lib/Compilation.js:5066:12
+  
+  - Compilation.js:5023 __webpack_require__
+    [app]/[webpack]/lib/Compilation.js:5023:18
+  
+  - Compilation.js:5094 
+    [app]/[webpack]/lib/Compilation.js:5094:20
+  
+  - async.js:3485 symbolIterator
+    [app]/[neo-async]/async.js:3485:9
+  
+  - Generated code for /app/node_modules/css-loader/dist/cjs.js!/app/src/css/style.css
+  
+  - 1 | __webpack_require__.r(__webpack_exports__);
+  
+  - 2 | /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+  
+  - 3 | /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+  
+  - 4 | /* harmony export */ });
+  
+  - 5 | /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "/app/node_modules/css-lo    ader/dist/runtime/sourceMaps.js");
+  
+  - 6 | /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPOR    TED_MODULE_0__);
+  
+  - 7 | /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "/app/node_modules/css-loader/dist/runt    ime/api.js");
+  
+  - 8 | /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__    );
+  
+  - 9 | /* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ "/app/node_modules/css-loader/dis    t/runtime/getUrl.js");
+  
+  - 10 | /* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MOD    ULE_2__);
+  
+  - 11 | // Imports
+  
+  - 12 |
+  
+  - 13 |
+  
+  - 14 |
+  
+  - 15 | var ___CSS_LOADER_URL_IMPORT_0___ = /* asset import */ new __webpack_require__.U(Object(function webpackMissingModule() { var e = new Error("Cannot find module '../assets/font/851CHIKARA-YOWAKU_002.ttf'"); e.code = '    MODULE_NOT_FOUND'; throw e; }()));
+  
+  - 16 | var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+  
+</pre><script defer src="main.js"></script>

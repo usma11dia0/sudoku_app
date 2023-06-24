@@ -1,11 +1,11 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import webpackMerge from 'webpack-merge';
-import {commonConf} from './webpack.common';
+import { merge } from 'webpack-merge';
+import commonConf from './webpack.common.js';
 
 const outputFile = '[name]';
 const assetFile = '[name]';
 
-export const devConf = () => webpackMerge(commonConf({outputFile, assetFile}), {
+export default () => merge(commonConf({outputFile, assetFile}), {
     mode: 'development',
     devtool: 'source-map',
     plugins:[

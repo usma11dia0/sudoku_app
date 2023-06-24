@@ -1,11 +1,11 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import webpackMerge from 'webpack-merge';
-import {commonConf} from './webpack.common';
+import commonConf from './webpack.common.js';
 
 const outputFile = '[name].[chunkhash]';
 const assetFile = '[contenthash]';
 
-export const prodConf = () => webpackMerge(commonConf({outputFile, assetFile}), {
+export default () => webpackMerge(commonConf({outputFile, assetFile}), {
     mode: 'production',
     plugins:[
       new HtmlWebpackPlugin({

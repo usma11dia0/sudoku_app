@@ -1,7 +1,11 @@
+import { fileURLToPath } from 'url';
 import path from 'path';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
-export const commonConf = ({outputFile, assetFile}) => ({
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export default ({outputFile, assetFile}) => ({
     entry: './src/index.js',
     output: {
       path: path.resolve(__dirname, 'public'),
