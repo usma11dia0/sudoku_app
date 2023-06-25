@@ -11,8 +11,8 @@ export default () => merge(commonConf({outputFile, assetFile}), {
   plugins:[
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      inject: "body",
-      scriptLoading: "defer",
+      inject: 'body',
+      scriptLoading: 'defer',
       favicon: './src/assets/icons/favicon.jpg',
     }),
   ],

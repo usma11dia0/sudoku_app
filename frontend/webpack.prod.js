@@ -1,17 +1,28 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import webpackMerge from 'webpack-merge';
-import commonConf from './webpack.common_old.js';
+import CSSMinimizerPlugin from 'css-minimizer-webpack-plugin';
+import { merge } from 'webpack-merge';
+
+import commonConf from './webpack.common.js';
 
 const outputFile = '[name].[chunkhash]';
 const assetFile = '[contenthash]';
 
-export default () => webpackMerge(commonConf({outputFile, assetFile}), {
-    mode: 'production',
-    plugins:[
-      new HtmlWebpackPlugin({
-        template: './src/index.html',
-        inject: 'body' //分割
-      })
-    ],
-  }
-);
+export default () => merge(commonConf({outputFile, assetFile}), {
+  mode: 'production',
+  // output: {
+  //   publicPath: '/assets/' //S3の参照先を記載
+  // },
+  optimization: {
+    minimizer: [
+      new CSSMinimizerPlugin()
+    ]
+  },
+  plugins:[
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      inject: 'body', 
+      scriptLoading: 'defer',
+      favicon: './src/assets/icons/favicon.jpg',
+    })
+  ],
+});

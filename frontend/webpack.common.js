@@ -10,7 +10,7 @@ export default ({outputFile, assetFile}) => ({
   output: {
     path: resolve(__dirname, 'public'),
     filename: `${outputFile}.js`,
-    assetModuleFilename: `assets/${assetFile}[ext]`
+    assetModuleFilename: `assets/${assetFile}[ext]`,
   },
   module: {
     rules: [
