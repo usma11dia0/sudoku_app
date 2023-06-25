@@ -1,12 +1,13 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import webpackMerge from 'webpack-merge';
+import { merge } from 'webpack-merge';
 import commonConf from './webpack.common_old.js';
 
-const outputFile = '[name].[chunkhash]';
-const assetFile = '[contenthash]';
+const outputFile = '[name]';
+const assetFile = '[name]';
 
-export default () => webpackMerge(commonConf({outputFile, assetFile}), {
-    mode: 'production',
+export default () => merge(commonConf({outputFile, assetFile}), {
+    mode: 'development',
+    devtool: 'source-map',
     plugins:[
       new HtmlWebpackPlugin({
         template: './src/index.html',

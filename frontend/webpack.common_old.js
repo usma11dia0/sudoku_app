@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default ({outputFile, assetFile}) => ({
-    entry: './src/index.js',
+    entry: './src/js/index.js',
     output: {
       path: path.resolve(__dirname, 'public'),
       filename: `${outputFile}.js`,
@@ -27,8 +27,8 @@ export default ({outputFile, assetFile}) => ({
                 loader: 'file-loader',
                 options: {
                   name: '[name].[ext]',
-                  outputPath: 'public/font',
-                  publicPath: 'public/font', //サーバー上のパス情報
+                  outputPath: 'fonts',
+                  publicPath: 'fonts', //サーバー上のパス情報
                 }
               }
             ]
@@ -40,8 +40,8 @@ export default ({outputFile, assetFile}) => ({
                 loader: 'file-loader',
                 options: {
                   name: `${assetFile}.[ext]`,
-                  outputPath: 'public/icons',
-                  publicPath: 'public/icons', //サーバー上のパス情報
+                  outputPath: 'icons',
+                  publicPath: 'icons', //サーバー上のパス情報
                 }
               }
             ],

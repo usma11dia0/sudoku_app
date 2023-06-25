@@ -2,6 +2,8 @@ import { handleKeyDown } from './handlers/handleKeyDown.js';
 import { handleInput } from './handlers/handleInput.js';
 import { highlightCross } from './utils/highlightCross.js';
 import { inputCsvFile } from './utils/inputCsvFile.js';
+import '../css/style.css';
+import '../css/css-reset.css';
 
 // 画面読み込み時に各盤面にイベントリスナーを付与
 document.addEventListener("DOMContentLoaded", () => {
