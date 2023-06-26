@@ -11,6 +11,8 @@ services:
       - db-store:/var/lib/postgresql/data
       - ./backend/database/scripts:/docker-entrypoint-initdb.d
       - ./backend/database/config/postgresql.conf:/etc/postgresql/postgresql.conf
+    depends_on:
+      - backend
     environment:
       - POSTGRES_PASSWORD=POSTGRES_PASSWORD
     networks:
@@ -19,7 +21,7 @@ services:
   frontend:
     build: 
       context: ./frontend
-      dockerfile: Dockerfile_dev
+      dockerfile: Dockerfile_local
     ports:
       - "8080:8080"
     volumes:
@@ -34,7 +36,7 @@ services:
   backend:
     build: 
       context: ./backend
-      dockerfile: Dockerfile_dev
+      dockerfile: Dockerfile_local
     ports:
       - "8000:8000"
     volumes:
@@ -42,8 +44,6 @@ services:
     container_name: backend_dev
     networks:
       - app-network
-    depends_on:
-      - db
   
 volumes:
   db-store:

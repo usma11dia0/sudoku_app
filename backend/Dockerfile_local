@@ -1,0 +1,15 @@
+# 開発用のDockerfile
+FROM python:3.11-slim
+
+# 作業ディレクトリの設定
+WORKDIR /app
+
+# 依存関係をインストール
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+# 開発サーバー用のポートを解放
+EXPOSE 8000
+
+# 開発サーバーを起動
+CMD ["python", "-u", "server.py"]
