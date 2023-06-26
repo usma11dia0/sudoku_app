@@ -2,7 +2,7 @@ import os
 import configparser
 
 config = configparser.ConfigParser()
-config.read('/app/config.ini')
+config.read('/app/config.ini') #別の箇所から読み込む?
 
 environment = os.getenv('ENVIRONMENT', 'local')
 

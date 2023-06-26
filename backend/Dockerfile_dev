@@ -8,6 +8,17 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
+# ホスト側のファイルをコンテナへコピー
+COPY assets/ ./assets/
+COPY core/ ./core/
+COPY util/ ./util/
+COPY database/ ./database/
+COPY server.py .
+COPY settings.py .
+
+# 要削除
+COPY config.ini .  
+
 # 開発サーバー用のポートを解放
 EXPOSE 8000
 

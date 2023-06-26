@@ -1,0 +1,5 @@
+FROM postgres:latest
+
+## ソースのコピー
+COPY ./backend/database/scripts /docker-entrypoint-initdb.d/
+COPY ./backend/database/config/postgresql.conf /etc/postgresql/postgresql.conf
