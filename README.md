@@ -14,14 +14,13 @@
 
 ## 技術スタック一覧
 - **Backend:** Python
-- **Frontend:** React (RTK / MUI ※一部SCSS) + TypeScript
-- **Infra:** AWS (EC2 / RDS / ALB / Route53 / ACM ), Firebase
-- **CI/CD**: AWS CodeBuild + AWS CodePipeline
+- **Frontend:** JavaScript
+- **Infra:** AWS (ECS[Fargate] / RDS / ALB / Route53 / ACM )
+- **CI/CD**: AWS (CodeBuild + CodePipeline)
 
 ## 使用バージョン
 - **Docker** Docker version 24.0.2
 - **docker-compose** docker-compose version 1.29.2
-
 
 ---
 ## ローカル起動方法
