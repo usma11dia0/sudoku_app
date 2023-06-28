@@ -1,10 +1,13 @@
+import os
 import sys
-sys.path.append("/app") # PYTHONPATHへ一時的に追加
+sys.path.append('/app') # PYTHONPATH(モジュール検索パス)へ一時的に追加
 
 from database.queries import save_data
 
+BASE_DIR ='/app'
+
 # 問題データ格納先
-problem_path = '/app/public/result/L6_47_23.csv'
+problem_path = os.path.join(BASE_DIR, 'assets/result/L6_47_23.csv')
 problem_data = ''
 problem_data_to_save = ''
 
@@ -17,8 +20,3 @@ with open(problem_path) as f:
     
     # DBへ保存
     save_data(problem_data_to_save)
-
-
-
-
-
