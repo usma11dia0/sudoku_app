@@ -1,5 +1,6 @@
 # 開発用のDockerfile
-FROM python:3.11-slim
+# ビルドステージ
+FROM python:3.11-slim AS build
 
 # 作業ディレクトリの設定
 WORKDIR /app
@@ -16,7 +17,7 @@ COPY database/ ./database/
 COPY server.py .
 COPY settings.py .
 
-# 要削除
+# AWS SecretManagerを使用する？
 COPY config.ini .  
 
 # 開発サーバー用のポートを解放
