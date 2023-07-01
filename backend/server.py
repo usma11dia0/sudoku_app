@@ -40,8 +40,12 @@ class SudokuHandler(BaseHTTPRequestHandler):
     # 確認用
     def do_GET(self):
         try:
+            # API動確
+            if self.path == "/":
+                response_body_json = json.dumps({"message": "Sudoku Solver is running on port 8080"})
+                self._send_response(response_body_json)
             # ヘルスチェック
-            if self.path == "/health":
+            elif self.path == "/api/health":
                 response_body_json = json.dumps({"status": "OK"})
                 self._send_response(response_body_json)
             else:
@@ -67,7 +71,7 @@ class SudokuHandler(BaseHTTPRequestHandler):
             self._send_response(json.dumps(error_content), 500)
 
 if __name__ == "__main__":
-    server_address = ("", 8000)
+    server_address = ("0.0.0.0", 8000)
     httpd = HTTPServer(server_address, SudokuHandler)
     print("Sudoku Solver is running on port 8000")
     httpd.serve_forever()

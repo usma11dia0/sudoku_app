@@ -5,7 +5,8 @@ services:
     build: 
       context: ./backend
       dockerfile: Dockerfile_postgres
-    container_name: postgres
+    image: sudoku-app-db
+    container_name: sudoku-app-db
     command: -c 'config_file=/etc/postgresql/postgresql.conf'
     ports:
       - 5432:5432
@@ -20,7 +21,8 @@ services:
       dockerfile: Dockerfile_dev
     ports:
       - "8000:8000"
-    container_name: backend_dev
+    image: sudoku-app-backend
+    container_name: sudoku-app-backend
     networks:
       - app-network
     depends_on:
