@@ -14,9 +14,6 @@ problem_data_to_save = ''
 # 前処理
 with open(problem_path) as f:
     problem_data = f.read()
-
-    # DBに保存する前にカンマを削除
-    problem_data_to_save = problem_data.strip(',\n').replace(',','')
     
     # DBへ保存
     save_data(problem_data_to_save)

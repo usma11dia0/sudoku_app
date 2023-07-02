@@ -2,24 +2,19 @@ import os
 import json 
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
-from env.app_env import app_env
+from settings import FRONTEND_URL
 from logger.server_logger import server_logger
 from core.solve_sudoku import solve_sudoku, input_grid
 from database.queries import fetch_data
 
-# 環境変数読み込み
-app_env = app_env
-
 # カスタムロガー読み込み
 logger = server_logger
-
-frontendURL = app_env['FRONTEND_URL']
 
 class SudokuHandler(BaseHTTPRequestHandler):
     def _set_headers(self, status_code=200):
         self.send_response(status_code)
         self.send_header("Content-type", "application/json")
-        self.send_header("Access-Control-Allow-Origin", frontendURL)
+        self.send_header("Access-Control-Allow-Origin", FRONTEND_URL)
         self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
         self.send_header('Access-Control-Allow-Headers', 'content-type')
         self.end_headers()

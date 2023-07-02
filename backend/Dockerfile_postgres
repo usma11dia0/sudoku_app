@@ -1,5 +1,6 @@
 FROM postgres:15
 
 ## ソースのコピー
-COPY ./database/scripts /docker-entrypoint-initdb.d/
+COPY ./database/problems/ /problems/
+COPY ./database/scripts/ /docker-entrypoint-initdb.d/
 COPY ./database/config/postgresql.conf /etc/postgresql/postgresql.conf

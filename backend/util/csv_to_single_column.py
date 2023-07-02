@@ -13,10 +13,10 @@ with open(input_path, "r") as csvfile:
         for cell in row:
             if cell == "":
                 cell = 0 
-                d.appendleft(cell)
-            else:
-                d.appendleft(cell)
+            d.append(cell)
+    
+    #deque型を文字列に変換
+    input_str = ''.join(map(str, d))
 
 with open(output_path, "w", newline='', encoding="utf-8") as csvfile:
-    csvwriter = csv.writer(csvfile)
-    csvwriter.writerow(d)
+    csvfile.write(input_str)
