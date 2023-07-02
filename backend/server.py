@@ -2,14 +2,24 @@ import os
 import json 
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
+from env.app_env import app_env
+from logger.server_logger import server_logger
 from core.solve_sudoku import solve_sudoku, input_grid
 from database.queries import fetch_data
+
+# 環境変数読み込み
+app_env = app_env
+
+# カスタムロガー読み込み
+logger = server_logger
+
+frontendURL = app_env['FRONTEND_URL']
 
 class SudokuHandler(BaseHTTPRequestHandler):
     def _set_headers(self, status_code=200):
         self.send_response(status_code)
         self.send_header("Content-type", "application/json")
-        self.send_header("Access-Control-Allow-Origin", "http://localhost:8080")
+        self.send_header("Access-Control-Allow-Origin", frontendURL)
         self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
         self.send_header('Access-Control-Allow-Headers', 'content-type')
         self.end_headers()
@@ -34,15 +44,16 @@ class SudokuHandler(BaseHTTPRequestHandler):
                 response_body_json = json.dumps(request_body_list) if is_solved else json.dumps(False)
                 self._send_response(response_body_json)
         except Exception as e:
-            error_content = {"error": str(e)}
+            error_content = {"error": str(e)}   
             self._send_response(json.dumps(error_content), 500)
+            logger.error("Failed to process GET request", exc_info=True)
 
     # 確認用
     def do_GET(self):
         try:
             # API動確
             if self.path == "/":
-                response_body_json = json.dumps({"message": "Sudoku Solver is running on port 8080"})
+                response_body_json = json.dumps({"message": "Sudoku Solver is running on port 8000"})
                 self._send_response(response_body_json)
             # ヘルスチェック
             elif self.path == "/api/health":
@@ -69,6 +80,7 @@ class SudokuHandler(BaseHTTPRequestHandler):
         except Exception as e:
             error_content = {"error": str(e)}
             self._send_response(json.dumps(error_content), 500)
+            logger.error("Failed to process GET request", exc_info=True)
 
 if __name__ == "__main__":
     server_address = ("0.0.0.0", 8000)
