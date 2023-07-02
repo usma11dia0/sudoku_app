@@ -1,7 +1,8 @@
-import {resolve, dirname, join} from 'path';
+import {resolve, dirname} from 'path';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { fileURLToPath } from 'url';
+  import {fileURLToPath} from 'url';
 
+//スクリプト自体の場所を基準にした絶対パスにて指定
 const __filename = fileURLToPath(import.meta.url); //ファイルの絶対パス(/app/webpack.dev.js)
 const __dirname = dirname(__filename); //ルートディレクトリ(/app)
 

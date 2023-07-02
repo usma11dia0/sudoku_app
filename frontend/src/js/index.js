@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
       
       // サンプル問題盤面の値を取得
       try {
-        const response = await fetch(`http://localhost:8000/api/problem/${buttonNumber}`)
+        const response = await fetch(`${SERVICE_URL}/api/problem/${buttonNumber}`)
         if (!response.ok) {
           throw new Error(`HTTP error status: ${response.status}`);
         }
@@ -107,7 +107,7 @@ document.getElementById("output-button").addEventListener("click", async() => {
   }
   
   // 入力盤面の値を送信
-  const response = await fetch("http://localhost:8000/api", {
+  const response = await fetch(`${SERVICE_URL}/api`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

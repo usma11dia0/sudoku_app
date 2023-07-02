@@ -7,8 +7,8 @@
   "scripts": {
     "start": "npx http-server ./public -p 8080",
     "sass": "node-sass -w ./src/scss/ -o ./src/css/ --recursive",
-    "pre-dev": "npm run cleanup && npx webpack --config ./webpack.pre-dev.js",
-    "build": "npm run cleanup && npx webpack --config ./webpack.dev.js",
+    "build_local": "npm run cleanup && npx webpack --config ./webpack.local.js",
+    "build_dev": "npm run cleanup && npx webpack --config ./webpack.dev.js",
     "cleanup": "npx rimraf ./public"
   },
   "author": "",
