@@ -7,8 +7,8 @@
   "scripts": {
     "start": "npx http-server ./public -p 8080",
     "sass": "node-sass -w ./src/scss/ -o ./src/css/ --recursive",
-    "dev": "npm run cleanup && npx webpack --config ./webpack.dev.js",
-    "build": "npm run cleanup && npx webpack --config ./webpack.prod.js",
+    "pre-dev": "npm run cleanup && npx webpack --config ./webpack.pre-dev.js",
+    "build": "npm run cleanup && npx webpack --config ./webpack.dev.js",
     "cleanup": "npx rimraf ./public"
   },
   "author": "",
@@ -24,6 +24,7 @@
     "node-sass": "^9.0.0",
     "rimraf": "^5.0.1",
     "style-loader": "^3.3.3",
+    "terser-webpack-plugin": "^5.3.9",
     "webpack": "^5.87.0",
     "webpack-cli": "^5.1.4",
     "webpack-merge": "^5.9.0"
