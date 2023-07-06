@@ -1,6 +1,6 @@
 # 開発用のDockerfile
 # ビルドステージ
-FROM python:3.11-slim as builder
+FROM python:3.11 as builder
 
 # 作業ディレクトリの設定
 WORKDIR /app
@@ -20,12 +20,17 @@ COPY conf/ ./conf/
 COPY core/ ./core/
 COPY database/ ./database/
 COPY env/ ./env/
+COPY logger/ ./logger/
 COPY util/ ./util/
 COPY server.py ./
 COPY settings.py ./
 
 # ランタイムステージ
 FROM python:3.11-slim as production
+RUN apt-get update && \
+    apt-get install -y \
+    curl
+
 COPY --from=builder /usr/local/bin/ /usr/local/bin/
 COPY --from=builder /usr/local/lib/python3.11/site-packages/ /usr/local/lib/python3.11/site-packages/
 COPY --from=builder /app/ ./
