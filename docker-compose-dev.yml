@@ -23,6 +23,8 @@ services:
       - "8000:8000"
     image: sudoku-app-backend
     container_name: sudoku-app-backend
+    environment:
+      - ENV=dev
     networks:
       - app-network
     depends_on:

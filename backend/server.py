@@ -50,10 +50,18 @@ class SudokuHandler(BaseHTTPRequestHandler):
             if self.path == "/":
                 response_body_json = json.dumps({"message": "Sudoku Solver is running on port 8000"})
                 self._send_response(response_body_json)
+                return
             # ヘルスチェック
             elif self.path == "/api/health":
                 response_body_json = json.dumps({"status": "OK"})
                 self._send_response(response_body_json)
+                return
+            # ブラウザによるfavicon読み込み対策 
+            elif self.path == "/favicon.ico":
+                self.send_response(200)
+                self.send_header('Content-type', 'image/x-icon')
+                self.end_headers()
+                return
             else:
                 # 数独の解答を導出しレスポンスを返す
                 # 与えられたパスを最後の部分とそれ以前の部分に分割。
@@ -61,17 +69,17 @@ class SudokuHandler(BaseHTTPRequestHandler):
                 endpoint, problem_id_str = path_elements
                 # DB内は0-indexedであるため合わせる
                 problem_id = int(problem_id_str) - 1
-                
                 # API動確用
                 if endpoint == "/api/test":
                     solve_sudoku(input_grid)
                     json_export_grid = json.dumps(input_grid)
                     self._send_response(json_export_grid)
-                
+                    return
                 if endpoint == "/api/problem":
                     problem_data = fetch_data(problem_id)
                     response_body_json = json.dumps(problem_data)
                     self._send_response(response_body_json)
+                    return
         except Exception as e:
             error_content = {"error": str(e)}
             self._send_response(json.dumps(error_content), 500)
