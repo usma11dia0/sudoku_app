@@ -12,7 +12,7 @@ logger = server_logger
 
 class SudokuHandler(BaseHTTPRequestHandler):
     def _set_headers(self, status_code=200):
-        logger.info(f"Access-Control-Allow-Origin is set to: {FRONTEND_URL}")
+        logger.debug(f"Access-Control-Allow-Origin is set to: {FRONTEND_URL}")
         self.send_response(status_code)
         self.send_header("Content-type", "application/json")
         self.send_header("Access-Control-Allow-Origin", FRONTEND_URL)
@@ -90,5 +90,5 @@ if __name__ == "__main__":
     server_address = ("0.0.0.0", 8000)
     httpd = HTTPServer(server_address, SudokuHandler)
     logger.info("Sudoku Solver is running on port 8000")
-    logger.info(f"FRONTEND_URL is set to: {FRONTEND_URL}")
+    logger.debug(f"FRONTEND_URL is set to: {FRONTEND_URL}")
     httpd.serve_forever()
