@@ -23,7 +23,6 @@ COPY env/ ./env/
 COPY logger/ ./logger/
 COPY util/ ./util/
 COPY server.py ./
-COPY settings.py ./
 
 # ランタイムステージ
 FROM python:3.11-slim as production

@@ -3,3 +3,5 @@ hupper
 numpy
 psycopg2-binary
 pytest
+botocore
+aws-secretsmanager-caching

@@ -2,7 +2,7 @@ import os
 import json 
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
-from settings import FRONTEND_URL
+from env.app_env import FRONTEND_URL
 from logger.server_logger import server_logger
 from core.solve_sudoku import solve_sudoku, input_grid
 from database.queries import fetch_data

@@ -1,6 +1,4 @@
-import pdb
-
-# 　Input data of sudoku
+# 数独問題(0が空欄を示す)
 input_grid = [
     [0, 1, 8, 0, 0, 0, 3, 2, 0],
     [2, 5, 0, 0, 0, 0, 0, 4, 6],
@@ -18,39 +16,39 @@ def find_next_cell(grid: list) -> tuple[int, int]:
         for j in range(9):
             if grid[i][j] == 0:
                 return i, j
-    # No empty cell found
+    # 空白セルが見つからない場合
     return -1, -1
 
 def is_valid(grid: list, row: int, col: int, num: int) -> bool:
-    # Check if the number is already present in the row
+    # numがすでに行に存在しているかを確認
     if num in grid[row]:
         return False
-    # Check if the number is already present in the column
+    # numがすでに列に存在しているかを確認
     for i in range(9):
         if num == grid[i][col]:
             return False
-    # Check if the number is already present in the 3x3 box
+    # numがすでに3x3のボックス内に存在しているかを確認
     row_start = (row // 3) * 3
     col_start = (col // 3) * 3
     for i in range(row_start, row_start + 3):
         for j in range(col_start, col_start + 3):
             if num == grid[i][j]:
                 return False
-    # If all the above checks are passed, the number is valid
+    # 上記のすべてのチェックがパスされれば、その数は有効
     return True
 
-def solve_sudoku(grid: list, i: int = 0, j: int = 0) -> bool:
+def solve_sudoku(grid: list) -> bool:
     i, j = find_next_cell(grid)
-    # If there is no empty cell, the sudoku is solved
+    # 空白セルがない場合は終了
     if i == -1 and j == -1:
         return True
-    # Try all the numbers from 1 to 9
+    # 1から9までのすべての数を試す
     for num in range(1, 10):
         if is_valid(grid, i, j, num):
             grid[i][j] = num
-            # Recursively solve the sudoku
-            if solve_sudoku(grid, i, j):
+            # 再帰的に数独を解く
+            if solve_sudoku(grid):
                 return True
-            # If the number is not valid, backtrack and try another number
+            # その数が有効でない場合、gridの値を0に戻してバックトラック(引き返す)
             grid[i][j] = 0
     return False
