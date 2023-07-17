@@ -34,7 +34,6 @@ if environment == 'dev':
     secret_dict = json.loads(secret)
     app_env['POSTGRES_HOST'] = secret_dict['host']
     app_env['POSTGRES_PASSWORD'] = secret_dict['password']
-    print(app_env)
 
 # DBの設定値を読込
 POSTGRES_HOST = app_env['POSTGRES_HOST']
