@@ -35,7 +35,7 @@ POSTGRES_PASSWORD=postgres
 POSTGRES_HOST = db
 POSTGRES_USER = sudoku_user
 POSTGRES_PASSWORD = sudoku_user
-POSTGRES_DB = sudoku_db
+POSTGRES_DBNAME = sudoku_db
 ```
 4. ルートディレクトリへ移動し`docker-compose up -d`コマンドを実行
 5. Webブラウザ上で`http://localhost:8080/`へアクセス

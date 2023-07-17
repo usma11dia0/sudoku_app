@@ -11,7 +11,7 @@ services:
     ports:
       - 5432:5432
     environment:
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_PASSWORD=postgres
     networks:
       - app-network
 
@@ -25,6 +25,8 @@ services:
     container_name: sudoku-app-backend
     environment:
       - ENV=dev
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
     networks:
       - app-network
     depends_on:

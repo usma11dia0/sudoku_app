@@ -13,7 +13,7 @@ services:
     volumes:
       - db-store:/var/lib/postgresql/data
     environment:
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_PASSWORD=postgres
     networks:
       - app-network
 

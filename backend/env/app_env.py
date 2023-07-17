@@ -5,9 +5,9 @@ from botocore.exceptions import ClientError
 from aws_secretsmanager_caching import SecretCache, SecretCacheConfig
 
 # AWS Secret Managerからシークレットを取得
-def get_secret(secret_name):
+def get_secret(secret_name, region_name):
     try:
-        client = botocore.session.get_session().create_client('secretsmanager')
+        client = botocore.session.get_session().create_client('secretsmanager', region_name=region_name)
     except ClientError as e:
         # For a list of exceptions thrown, see
         # https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html
@@ -15,7 +15,7 @@ def get_secret(secret_name):
 
     # シークレット値をクライアント側にてキャッシュ
     cache_config = SecretCacheConfig()
-    cache = SecretCache( config = cache_config, client = client)
+    cache = SecretCache(config = cache_config, client = client)
     secret = cache.get_secret_string(secret_name)
 
     return secret
@@ -29,12 +29,12 @@ app_env = env_conf[environment]
 if environment == 'dev':
     # dev環境の場合、AWS Secret Managerからシークレットを取得
     AWS_SECRETNAME = app_env['AWS_SECRETNAME']
-    secret = get_secret(AWS_SECRETNAME)
-    secret_dict = json.load(secret)
+    AWS_REGIONNAME = app_env['AWS_REGIONNAME']
+    secret = get_secret(AWS_SECRETNAME, AWS_REGIONNAME)
+    secret_dict = json.loads(secret)
     app_env['POSTGRES_HOST'] = secret_dict['host']
-    app_env['POSTGRES_DBNAME'] = secret_dict['dbname']
-    app_env['POSTGRES_USER'] = secret_dict['username']
     app_env['POSTGRES_PASSWORD'] = secret_dict['password']
+    print(app_env)
 
 # DBの設定値を読込
 POSTGRES_HOST = app_env['POSTGRES_HOST']

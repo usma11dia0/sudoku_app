@@ -2,7 +2,7 @@ import fs from 'fs';
 import {fileURLToPath} from 'url';
 import {resolve, dirname} from 'path';
 
-//スクリプト自体の場所を基準にした絶対パスにて指定
+//スクリプトの親ディレクトリを基準にした絶対パスにて指定
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
