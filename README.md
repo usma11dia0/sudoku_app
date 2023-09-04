@@ -29,14 +29,19 @@
 ```yaml:.env
 POSTGRES_PASSWORD=postgres
 ```
-3. **./backend/**配下に、`config.ini`ファイルを作成
-```yaml:config.ini
-[local]
-POSTGRES_HOST = db
-POSTGRES_USER = sudoku_user
-POSTGRES_PASSWORD = sudoku_user
-POSTGRES_DBNAME = sudoku_db
-```
-4. ルートディレクトリへ移動し`docker-compose up -d`コマンドを実行
-5. Webブラウザ上で`http://localhost:8080/`へアクセス
 
+1. ルートディレクトリへ移動し`docker-compose up -d`コマンドを実行
+2. publicフォルダをbuildする
+   1. frontendコンテナへ入る
+   ```yaml:
+   docker-compose -f docker-compose-dev.yml exec frontend bash
+   docker-compose -f docker-compose-local.yml exec frontend bash
+   ```
+   2. npmコマンドでbuildの実行
+   ```yaml:
+   docker-compose -f docker-compose-dev.yml exec frontend bash
+   docker-compose -f docker-compose-local.yml exec frontend bash
+   ```
+3. 再度`docker-compose up -d`コマンドを実行
+
+4. Webブラウザ上で`http://localhost:8080/`へアクセス
